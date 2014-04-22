@@ -29,9 +29,28 @@
 @property (weak, nonatomic) IBOutlet UILabel *boundsOriginXLabel;
 @property (weak, nonatomic) IBOutlet UILabel *boundsOriginYLabel;
 
+@property (weak, nonatomic) IBOutlet UISlider *scaleFrameHorizontallySlider;
+@property (weak, nonatomic) IBOutlet UISlider *scaleFrameVerticallySleder;
+
 @end
 
 @implementation ViewController
+
+
+#pragma mark - transform actions
+- (IBAction)rotateFrame:(UISlider *)sender
+{
+    self.transformPurpleFrame.transform = CGAffineTransformMakeRotation(sender.value * M_PI/180.0);
+}
+
+- (IBAction)scaleFrameHorizontally:(UISlider *)sender {
+    self.transformPurpleFrame.transform = CGAffineTransformMakeScale(sender.value, self.scaleFrameVerticallySleder.value);
+}
+
+- (IBAction)scaleFrameVertically:(UISlider *)sender {
+    self.transformPurpleFrame.transform = CGAffineTransformMakeScale(self.scaleFrameHorizontallySlider.value, sender.value);
+
+}
 
 #pragma mark - bounds origin actions
 - (IBAction)purpleRectClipsToBoundsSwitched:(UISwitch *)sender
