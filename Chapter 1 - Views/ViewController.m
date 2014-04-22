@@ -20,22 +20,47 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     [self smallRedSquare];
-        
+    
+    [self overlappingViews];
+    
     // In debugger console enter 'po [self.view recursiveDescription]'
 }
 
 -(void) smallRedSquare
 {
     UIView* mainView = self.view;
-    UIView* v = [[UIView alloc] initWithFrame: CGRectMake(100,100,50,50)];
-    v.backgroundColor = [UIColor redColor];
-    [mainView addSubview: v];
+    UIView* smallRedSquare = [[UIView alloc] initWithFrame: CGRectMake(100,100,50,50)];
+    smallRedSquare.backgroundColor = [UIColor redColor];
+    [mainView addSubview: smallRedSquare];
     
     [self logView: mainView name: @"mainView"];
     
-    [self logView: v name: @"v"];
+    [self logView: smallRedSquare name: @"smallRedSquare"];
 }
 
+- (void) overlappingViews
+{
+//    CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)
+    
+    UIView *purpleRect = [[UIView alloc] initWithFrame: CGRectMake(113, 111, 132, 194)];
+    purpleRect.backgroundColor = [UIColor colorWithRed:1 green: .4 blue: 1 alpha: 1];
+    
+    UIView *greenRect = [[UIView alloc] initWithFrame: CGRectMake(41, 56, 132, 194)];
+    greenRect.backgroundColor = [UIColor colorWithRed: .5 green: 1 blue: 0 alpha: 1];
+    
+    UIView *redRect = [[UIView alloc] initWithFrame: CGRectMake(43, 197, 160, 230)];
+    redRect.backgroundColor = [UIColor colorWithRed: 1 green: 0 blue: 0 alpha: 1];
+    
+    UIView* mainView = self.view;
+    [mainView addSubview: purpleRect];
+    [purpleRect addSubview:greenRect];
+    [mainView addSubview:redRect];
+    
+    [self logView: purpleRect name: @"purpleRect"];
+    [self logView: greenRect name: @"greenRect"];
+    [self logView: redRect name: @"redRect"];
+    
+}
 
 - (void)logView: (UIView*)v name: (NSString*) name
 {
