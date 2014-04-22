@@ -26,6 +26,13 @@
 
 @implementation ViewController
 
+// CGRectInsets actions
+
+- (IBAction)greenInsetCGRectInsetsChanged:(UISlider *)sender {
+    
+   self.greenInset.frame = CGRectInset(self.purpleFrame.bounds, sender.value, sender.value);
+}
+
 
 // large red rectangle actions
 - (IBAction)largeRedRectangleRemoveAddSwitch:(UISwitch *)sender {
