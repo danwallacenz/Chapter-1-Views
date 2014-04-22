@@ -21,6 +21,7 @@
 
 @property (weak, nonatomic) IBOutlet UISlider *smallRedSquareViewAlphaSlider;
 
+@property (weak, nonatomic) IBOutlet UILabel *insetsLabel;
 
 @end
 
@@ -30,7 +31,15 @@
 #pragma mark - CGRectInsets actions
 - (IBAction)greenInsetCGRectInsetsChanged:(UISlider *)sender {
     
-   self.greenInset.frame = CGRectInset(self.purpleFrame.bounds, sender.value, sender.value);
+    self.greenInset.frame = CGRectInset(self.purpleFrame.bounds, sender.value, sender.value);
+    
+    [self.greenInset.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [self addCenterMark: self.self.greenInset];
+    
+    [self addCenterMark: self.self.purpleFrame];
+    
+    self.insetsLabel.text = [NSString stringWithFormat:@"%f", sender.value];
+
 }
 
 
@@ -194,12 +203,10 @@
 {
     CGPoint center = [v convertPoint:v.center fromView:v.superview];
 
-//    CGRect centerRect = CGRectMake(v.bounds.origin.x , v.bounds.origin.y, 4, 4);
     CGRect centerRect = CGRectMake(0, 0, 4, 4);
 
     UIView *centerPoint = [[UIView alloc] initWithFrame: centerRect];
     centerPoint.center = center;
-//    centerPoint.backgroundColor = v.superview.backgroundColor;
     
     centerPoint.backgroundColor = [UIColor blackColor];
     
