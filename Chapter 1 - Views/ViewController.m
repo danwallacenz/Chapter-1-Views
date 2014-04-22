@@ -23,20 +23,45 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *insetsLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *boundOriginLabel;
+
 @end
 
 @implementation ViewController
+
+#pragma mark - bounds origin actions
+
+- (IBAction)boundsOriginXChanged:(UISlider *)sender {
+    CGRect purpleFrameBounds =  self.purpleFrame.bounds;
+    purpleFrameBounds.origin.x = sender.value;
+    self.purpleFrame.bounds = purpleFrameBounds;
+    
+    self.boundOriginLabel.text = [NSString stringWithFormat:@"origin x:%f, y:%f",self.purpleFrame.bounds.origin.x, self.purpleFrame.bounds.origin.y];
+    [self.greenInset.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [self addCenterMark: self.self.greenInset];
+}
+
+- (IBAction)boundsOriginYChanged:(UISlider *)sender {
+    CGRect purpleFrameBounds =  self.purpleFrame.bounds;
+    purpleFrameBounds.origin.y = sender.value;
+    self.purpleFrame.bounds = purpleFrameBounds;
+    
+    self.boundOriginLabel.text = [NSString stringWithFormat:@"origin x:%f, y:%f",self.purpleFrame.bounds.origin.x, self.purpleFrame.bounds.origin.y];
+    [self.greenInset.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [self addCenterMark: self.self.greenInset];
+}
 
 
 #pragma mark - CGRectInsets actions
 - (IBAction)greenInsetCGRectInsetsChanged:(UISlider *)sender {
     
-    self.greenInset.frame = CGRectInset(self.purpleFrame.bounds, sender.value, sender.value);
+//    self.greenInset.frame = CGRectInset(self.purpleFrame.bounds, sender.value, sender.value);
+    self.greenInset.bounds = CGRectInset(self.purpleFrame.bounds, sender.value, sender.value);
     
     [self.greenInset.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self addCenterMark: self.self.greenInset];
     
-    [self addCenterMark: self.self.purpleFrame];
+//    [self addCenterMark: self.self.purpleFrame];
     
     self.insetsLabel.text = [NSString stringWithFormat:@"%f", sender.value];
 
@@ -169,7 +194,7 @@
 //    CGRectInset(CGRect rect, CGFloat dx, CGFloat dy)
     
     self.greenInset = [[UIView alloc] initWithFrame:CGRectInset(self.purpleFrame.bounds, 10, 10)];
-    self. greenInset.backgroundColor = [UIColor colorWithRed:.5 green:1 blue:0 alpha:.8];
+    self. greenInset.backgroundColor = [UIColor colorWithRed:.5 green:1 blue:0 alpha:.5];
     
     UIView* mainView = self.view;
     [mainView addSubview:self.purpleFrame];
