@@ -34,6 +34,10 @@
 
 @property (weak, nonatomic) IBOutlet UISlider *scaleContentsVerticallySlider;
 @property (weak, nonatomic) IBOutlet UISlider *scaleContentsHorizontallySlider;
+
+@property (weak, nonatomic) IBOutlet UISlider *translateContentsVerticallySlider;
+@property (weak, nonatomic) IBOutlet UISlider *translateContentsHorizontallySlider;
+
 @end
 
 @implementation ViewController
@@ -62,9 +66,16 @@
 }
 
 - (IBAction)translateContentsVertically:(UISlider *)sender {
-    self.transformGreenInset.transform = CGAffineTransformMakeTranslation(1, sender.value);
+    self.transformGreenInset.transform = CGAffineTransformMakeTranslation(self.translateContentsHorizontallySlider.value, sender.value);
 }
 
+- (IBAction)translateContentsVHorizontally:(UISlider *)sender {
+    self.transformGreenInset.transform = CGAffineTransformMakeTranslation(sender.value, self.translateContentsVerticallySlider.value);
+}
+
+- (IBAction)rotateContents:(UISlider *)sender {
+    self.transformGreenInset.transform = CGAffineTransformMakeRotation(sender.value * M_PI/180.0);
+}
 
 #pragma mark - bounds origin actions
 - (IBAction)purpleRectClipsToBoundsSwitched:(UISwitch *)sender
@@ -222,7 +233,7 @@
     self.greenRect.backgroundColor = [UIColor colorWithRed: .5 green: 1 blue: 0 alpha: 1];
     
     self.redRect = [[UIView alloc] initWithFrame: CGRectMake(43, 197, 160, 230)];
-    self.redRect.backgroundColor = [UIColor colorWithRed: 1 green: 0 blue: 0 alpha: 1];
+    self.redRect.backgroundColor = [UIColor colorWithRed: 1 green: 0 blue: 0 alpha: .6];
     
     UIView* mainView = self.view;
     [mainView addSubview: self.purpleRect];
