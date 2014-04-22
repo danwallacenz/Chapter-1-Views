@@ -37,7 +37,13 @@
     }
 }
 
+- (IBAction)smallRedSquareViewAlphaChanged:(UISlider *)sender {
+    self.smallRedSquare.alpha = sender.value;
+}
 
+- (IBAction)smallRedSquareColorAlphaChanged:(UISlider *)sender {
+    self.smallRedSquare.backgroundColor = [self.smallRedSquare.backgroundColor colorWithAlphaComponent:sender.value];
+}
 
 - (void)viewDidLoad
 {
