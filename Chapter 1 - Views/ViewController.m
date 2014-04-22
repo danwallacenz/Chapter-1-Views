@@ -39,6 +39,9 @@
     }
 }
 
+- (IBAction)purpleRectangleViewAlphaChanged:(UISlider *)sender {
+    self.purpleRect.alpha = sender.value;
+}
 
 
 // Small red square actions
