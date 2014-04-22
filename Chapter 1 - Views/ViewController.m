@@ -53,6 +53,9 @@
     self.purpleRect.alpha = sender.value;
 }
 
+- (IBAction)purpleRectangleClipToBounds:(UISwitch *)sender {
+    self.purpleRect.clipsToBounds = !self.purpleRect.clipsToBounds;
+}
 
 // Small red square actions
 
