@@ -27,6 +27,21 @@
 @implementation ViewController
 
 
+// purple rectangle actions
+
+- (IBAction)purpleRectangleRemoveAddSwitch:(UISwitch *)sender {
+    NSLog(@"purpleRectangleRemoveAddSwitch switched");
+    if(self.purpleRect.superview){
+        [self.purpleRect removeFromSuperview];
+    }else{
+        UIView* mainView = self.view;
+        [mainView addSubview: self.purpleRect];
+    }
+}
+
+
+
+// Small red square actions
 
 - (IBAction)smallRedSquareRemoveAddSwitch:(UISwitch *)sender {
     NSLog(@"smallRedSquareRemoveAddSwitch switched");
