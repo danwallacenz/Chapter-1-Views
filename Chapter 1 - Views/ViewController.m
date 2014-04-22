@@ -32,6 +32,8 @@
 @property (weak, nonatomic) IBOutlet UISlider *scaleFrameHorizontallySlider;
 @property (weak, nonatomic) IBOutlet UISlider *scaleFrameVerticallySleder;
 
+@property (weak, nonatomic) IBOutlet UISlider *scaleContentsVerticallySlider;
+@property (weak, nonatomic) IBOutlet UISlider *scaleContentsHorizontallySlider;
 @end
 
 @implementation ViewController
@@ -49,7 +51,14 @@
 
 - (IBAction)scaleFrameVertically:(UISlider *)sender {
     self.transformPurpleFrame.transform = CGAffineTransformMakeScale(self.scaleFrameHorizontallySlider.value, sender.value);
+}
 
+- (IBAction)scaleContentsVertically:(UISlider *)sender {
+    self.transformGreenInset.transform = CGAffineTransformMakeScale(self.scaleContentsHorizontallySlider.value, sender.value);
+}
+
+- (IBAction)scaleContentsHorizontally:(UISlider *)sender {
+    self.transformGreenInset.transform = CGAffineTransformMakeScale(sender.value, self.scaleContentsVerticallySlider.value);
 }
 
 #pragma mark - bounds origin actions
