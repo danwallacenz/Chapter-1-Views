@@ -19,6 +19,9 @@
 @property (strong, nonatomic) UIView *purpleFrame;
 @property (strong, nonatomic) UIView *greenInset;
 
+@property (strong, nonatomic) UIView *transformPurpleFrame;
+@property (strong, nonatomic) UIView *transformGreenInset;
+
 @property (weak, nonatomic) IBOutlet UISlider *smallRedSquareViewAlphaSlider;
 
 @property (weak, nonatomic) IBOutlet UILabel *insetsLabel;
@@ -149,6 +152,8 @@
     
     [self addInsetRect];
     
+    [self addTransformsRects];
+    
     // In debugger console enter 'po [self.view recursiveDescription]'
 }
 
@@ -219,6 +224,27 @@
     
     [self logView:self.purpleFrame name:@"purpleFrame"];
     [self logView:self.greenInset name:@"greenInset"];
+}
+
+-(void) addTransformsRects
+{
+    self.transformPurpleFrame = [[UIView alloc] initWithFrame:CGRectMake(43, 450, 160, 230)];
+    self.transformPurpleFrame.backgroundColor = [UIColor colorWithRed:1 green:.4 blue:1 alpha:1];
+    
+    //    CGRectInset(CGRect rect, CGFloat dx, CGFloat dy)
+    
+    self.transformGreenInset = [[UIView alloc] initWithFrame:CGRectInset(self.transformPurpleFrame.bounds, 10, 10)];
+    self. transformGreenInset.backgroundColor = [UIColor colorWithRed:.5 green:1 blue:0 alpha:.8];
+    
+    UIView* mainView = self.view;
+    [mainView addSubview:self.transformPurpleFrame];
+    [self.transformPurpleFrame addSubview:self.transformGreenInset];
+    
+    [self addCenterMark:self.transformGreenInset];
+    [self addCenterMark:self.transformPurpleFrame];
+    
+    [self logView:self.transformPurpleFrame name:@"transformPurpleFrame"];
+    [self logView:self.transformGreenInset name:@"transformGreenInset"];
 }
 
 
