@@ -27,6 +27,16 @@
 @implementation ViewController
 
 
+// large red rectangle actions
+- (IBAction)largeRedRectangleRemoveAddSwitch:(UISwitch *)sender {
+    if(self.redRect.superview){
+        [self.redRect removeFromSuperview];
+    }else{
+        UIView* mainView = self.view;
+        [mainView addSubview: self.redRect];
+    }
+}
+
 // purple rectangle actions
 
 - (IBAction)purpleRectangleRemoveAddSwitch:(UISwitch *)sender {
