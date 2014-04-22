@@ -61,6 +61,11 @@
     self.transformGreenInset.transform = CGAffineTransformMakeScale(sender.value, self.scaleContentsVerticallySlider.value);
 }
 
+- (IBAction)translateContentsVertically:(UISlider *)sender {
+    self.transformGreenInset.transform = CGAffineTransformMakeTranslation(1, sender.value);
+}
+
+
 #pragma mark - bounds origin actions
 - (IBAction)purpleRectClipsToBoundsSwitched:(UISwitch *)sender
 {
