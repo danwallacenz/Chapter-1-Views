@@ -19,15 +19,23 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    [self smallRedSquare];
+        
+    // In debugger console enter 'po [self.view recursiveDescription]'
+}
+
+-(void) smallRedSquare
+{
     UIView* mainView = self.view;
     UIView* v = [[UIView alloc] initWithFrame: CGRectMake(100,100,50,50)];
     v.backgroundColor = [UIColor redColor];
     [mainView addSubview: v];
-
+    
     [self logView: mainView name: @"mainView"];
     
     [self logView: v name: @"v"];
 }
+
 
 - (void)logView: (UIView*)v name: (NSString*) name
 {
