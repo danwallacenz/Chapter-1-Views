@@ -19,6 +19,7 @@
 @property (strong, nonatomic) UIView *purpleFrame;
 @property (strong, nonatomic) UIView *greenInset;
 
+@property (weak, nonatomic) IBOutlet UISlider *smallRedSquareViewAlphaSlider;
 
 
 @end
@@ -38,11 +39,16 @@
 }
 
 - (IBAction)smallRedSquareViewAlphaChanged:(UISlider *)sender {
+    
+    NSLog(@"Setting small red square VIEW alpha to %f", sender.value);
     self.smallRedSquare.alpha = sender.value;
+     NSLog(@"Actual alpha is %f", self.smallRedSquare.alpha*sender.value);
 }
 
 - (IBAction)smallRedSquareColorAlphaChanged:(UISlider *)sender {
+    NSLog(@"Setting small red square BACKGROUND COLOR` alpha to %f", sender.value);
     self.smallRedSquare.backgroundColor = [self.smallRedSquare.backgroundColor colorWithAlphaComponent:sender.value];
+    NSLog(@"Actual alpha is %f", self.smallRedSquare.alpha*sender.value);
 }
 
 - (void)viewDidLoad
