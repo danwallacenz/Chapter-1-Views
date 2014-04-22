@@ -26,15 +26,15 @@
 
 @implementation ViewController
 
-// CGRectInsets actions
 
+#pragma mark - CGRectInsets actions
 - (IBAction)greenInsetCGRectInsetsChanged:(UISlider *)sender {
     
    self.greenInset.frame = CGRectInset(self.purpleFrame.bounds, sender.value, sender.value);
 }
 
 
-// large red rectangle actions
+#pragma mark - large red rectangle actions
 - (IBAction)largeRedRectangleRemoveAddSwitch:(UISwitch *)sender {
     if(self.redRect.superview){
         [self.redRect removeFromSuperview];
@@ -44,10 +44,9 @@
     }
 }
 
-// purple rectangle actions
-
+#pragma mark - purple rectangle actions
 - (IBAction)purpleRectangleRemoveAddSwitch:(UISwitch *)sender {
-    NSLog(@"purpleRectangleRemoveAddSwitch switched");
+
     if(self.purpleRect.superview){
         [self.purpleRect removeFromSuperview];
     }else{
@@ -64,10 +63,9 @@
     self.purpleRect.clipsToBounds = !self.purpleRect.clipsToBounds;
 }
 
-// Small red square actions
-
+#pragma mark - Small red square actions
 - (IBAction)smallRedSquareRemoveAddSwitch:(UISwitch *)sender {
-    NSLog(@"smallRedSquareRemoveAddSwitch switched");
+
     if(self.smallRedSquare.superview){
         [self.smallRedSquare removeFromSuperview];
     }else{
@@ -84,11 +82,13 @@
 }
 
 - (IBAction)smallRedSquareColorAlphaChanged:(UISlider *)sender {
+    
     NSLog(@"Setting small red square BACKGROUND COLOR` alpha to %f", sender.value);
     self.smallRedSquare.backgroundColor = [self.smallRedSquare.backgroundColor colorWithAlphaComponent:sender.value];
     NSLog(@"Actual alpha is %f", self.smallRedSquare.alpha*sender.value);
 }
 
+#pragma mark - UIViewController mthods
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -103,12 +103,21 @@
     // In debugger console enter 'po [self.view recursiveDescription]'
 }
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - add views
 -(void) addSmallRedSquare
 {
     UIView* mainView = self.view;
     self.smallRedSquare = [[UIView alloc] initWithFrame: CGRectMake(100,100,50,50)];
     self.smallRedSquare.backgroundColor = [UIColor redColor];
+    
     [mainView addSubview: self.smallRedSquare];
+    [self addCenterMark: self.smallRedSquare];
     
     [self logView: mainView name: @"mainView"];
     
@@ -133,6 +142,10 @@
     [self.purpleRect addSubview:self.greenRect];
     [mainView addSubview:self.redRect];
     
+    [self addCenterMark: self.purpleRect];
+    [self addCenterMark: self.greenRect];
+    [self addCenterMark: self.redRect];
+    
     [self logView: self.purpleRect name: @"purpleRect"];
     [self logView: self.greenRect name: @"greenRect"];
     [self logView: self.redRect name: @"redRect"];
@@ -147,16 +160,20 @@
 //    CGRectInset(CGRect rect, CGFloat dx, CGFloat dy)
     
     self.greenInset = [[UIView alloc] initWithFrame:CGRectInset(self.purpleFrame.bounds, 10, 10)];
-   self. greenInset.backgroundColor = [UIColor colorWithRed:.5 green:1 blue:0 alpha:1];
+    self. greenInset.backgroundColor = [UIColor colorWithRed:.5 green:1 blue:0 alpha:.8];
     
     UIView* mainView = self.view;
     [mainView addSubview:self.purpleFrame];
     [self.purpleFrame addSubview:self.greenInset];
+    [self addCenterMark:self.greenInset];
+    [self addCenterMark:self.purpleFrame];
     
     [self logView:self.purpleFrame name:@"purpleFrame"];
     [self logView:self.greenInset name:@"greenInset"];
 }
 
+
+#pragma mark -  utility methods
 - (void)logView: (UIView*)v name: (NSString*) name
 {
     NSLog(@"%@ frame origin.x = %f", name, v.frame.origin.x);
@@ -173,11 +190,20 @@
     NSLog(@"%@ center.y = %f", name, v.center.y);
 }
 
-
-- (void)didReceiveMemoryWarning
+- (void) addCenterMark: (UIView*)v
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    CGPoint center = [v convertPoint:v.center fromView:v.superview];
+
+//    CGRect centerRect = CGRectMake(v.bounds.origin.x , v.bounds.origin.y, 4, 4);
+    CGRect centerRect = CGRectMake(0, 0, 4, 4);
+
+    UIView *centerPoint = [[UIView alloc] initWithFrame: centerRect];
+    centerPoint.center = center;
+//    centerPoint.backgroundColor = v.superview.backgroundColor;
+    
+    centerPoint.backgroundColor = [UIColor blackColor];
+    
+    [v addSubview:centerPoint];
 }
 
 @end

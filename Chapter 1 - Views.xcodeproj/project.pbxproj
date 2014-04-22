@@ -470,6 +470,7 @@
 				E079D06B1905FC8200A04042 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E079D06C1905FC8200A04042 /* Build configuration list for PBXNativeTarget "Chapter 1 - ViewsTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +479,7 @@
 				E079D06E1905FC8200A04042 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
