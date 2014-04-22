@@ -81,6 +81,9 @@
     self.transformPurpleFrame.transform = CGAffineTransformMake(1, 0, -sender.value, 1, 0, 0);
 }
 
+- (IBAction)shearContents:(UISlider *)sender {
+     self.transformGreenInset.transform = CGAffineTransformMake(1, 0, -sender.value, 1, 0, 0);
+}
 
 #pragma mark - bounds origin actions
 - (IBAction)purpleRectClipsToBoundsSwitched:(UISwitch *)sender
