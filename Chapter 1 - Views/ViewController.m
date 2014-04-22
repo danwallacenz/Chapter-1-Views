@@ -25,6 +25,20 @@
 
 @implementation ViewController
 
+
+
+- (IBAction)smallRedSquareRemoveAddSwitch:(UISwitch *)sender {
+    NSLog(@"smallRedSquareRemoveAddSwitch switched");
+    if(self.smallRedSquare.superview){
+        [self.smallRedSquare removeFromSuperview];
+    }else{
+        UIView* mainView = self.view;
+        [mainView addSubview: self.smallRedSquare];
+    }
+}
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
