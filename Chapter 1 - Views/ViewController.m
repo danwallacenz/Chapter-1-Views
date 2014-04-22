@@ -10,6 +10,15 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) UIView *smallRedSquare;
+
+@property (weak, nonatomic) UIView *purpleRect;
+@property (weak, nonatomic) UIView *greenRect;
+@property (weak, nonatomic) UIView *redRect;
+
+@property (weak, nonatomic) UIView *purpleFrame;
+@property (weak, nonatomic) UIView *greenInset;
+
 @end
 
 @implementation ViewController
@@ -19,16 +28,16 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    [self smallRedSquare];
+    [self addSmallRedSquare];
     
-    [self overlappingViews];
+    [self addOverlappingViews];
     
-    [self insetRect];
+    [self addInsetRect];
     
     // In debugger console enter 'po [self.view recursiveDescription]'
 }
 
--(void) smallRedSquare
+-(void) addSmallRedSquare
 {
     UIView* mainView = self.view;
     UIView* smallRedSquare = [[UIView alloc] initWithFrame: CGRectMake(100,100,50,50)];
@@ -40,9 +49,9 @@
     [self logView: smallRedSquare name: @"smallRedSquare"];
 }
 
-- (void) overlappingViews
+- (void) addOverlappingViews
 {
-//    CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)
+//    CGRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     
     UIView *purpleRect = [[UIView alloc] initWithFrame: CGRectMake(113, 111, 132, 194)];
     purpleRect.backgroundColor = [UIColor colorWithRed:1 green: .4 blue: 1 alpha: 1];
@@ -64,10 +73,12 @@
     
 }
 
--(void) insetRect
+-(void) addInsetRect
 {
     UIView* purpleFrame = [[UIView alloc] initWithFrame:CGRectMake(313, 111, 132, 194)];
     purpleFrame.backgroundColor = [UIColor colorWithRed:1 green:.4 blue:1 alpha:1];
+    
+//    CGRectInset(CGRect rect, CGFloat dx, CGFloat dy)
     
     UIView* greenInset = [[UIView alloc] initWithFrame:CGRectInset(purpleFrame.bounds, 10, 10)];
     greenInset.backgroundColor = [UIColor colorWithRed:.5 green:1 blue:0 alpha:1];
