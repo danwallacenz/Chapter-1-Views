@@ -77,6 +77,11 @@
     self.transformGreenInset.transform = CGAffineTransformMakeRotation(sender.value * M_PI/180.0);
 }
 
+- (IBAction)shearFrame:(UISlider *)sender {
+    self.transformPurpleFrame.transform = CGAffineTransformMake(1, 0, -sender.value, 1, 0, 0);
+}
+
+
 #pragma mark - bounds origin actions
 - (IBAction)purpleRectClipsToBoundsSwitched:(UISwitch *)sender
 {

@@ -382,6 +382,30 @@
                                     <constraint firstAttribute="height" constant="354" id="lz1-87-Fr8"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h46-o2-3l0">
+                                <rect key="frame" x="507" y="202" width="205" height="184"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shear" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LyI-TS-idH">
+                                        <rect key="frame" x="20" y="20" width="45" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="t4p-83-hqw">
+                                        <rect key="frame" x="18" y="49" width="169" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="shearFrame:" destination="BYZ-38-t0r" eventType="valueChanged" id="O8C-TO-dxR"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <color key="backgroundColor" red="0.8718065693" green="0.87015282849999998" blue="0.8793339416" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="205" id="g7m-UJ-goR"/>
+                                    <constraint firstAttribute="height" constant="184" id="iIt-DW-bPH"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -389,6 +413,8 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZJa-wt-4SB" secondAttribute="bottom" constant="20" id="IW5-i5-soj"/>
                             <constraint firstItem="GBd-rT-oTp" firstAttribute="leading" secondItem="ZJa-wt-4SB" secondAttribute="trailing" constant="8" id="If3-M3-gSg"/>
                             <constraint firstItem="GBd-rT-oTp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" symbolic="YES" id="MmN-yj-55C"/>
+                            <constraint firstItem="GBd-rT-oTp" firstAttribute="leading" secondItem="h46-o2-3l0" secondAttribute="trailing" constant="8" id="OZF-r0-UKx"/>
+                            <constraint firstItem="ZJa-wt-4SB" firstAttribute="top" secondItem="h46-o2-3l0" secondAttribute="bottom" constant="8" id="YNI-G6-QlE"/>
                             <constraint firstAttribute="trailing" secondItem="GBd-rT-oTp" secondAttribute="trailing" id="gEh-02-VTA"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
