@@ -23,37 +23,45 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *insetsLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *boundOriginLabel;
+@property (weak, nonatomic) IBOutlet UILabel *boundsOriginXLabel;
+@property (weak, nonatomic) IBOutlet UILabel *boundsOriginYLabel;
 
 @end
 
 @implementation ViewController
 
 #pragma mark - bounds origin actions
+- (IBAction)purpleRectClipsToBoundsSwitched:(UISwitch *)sender
+{
+    self.purpleFrame.clipsToBounds = !self.purpleFrame.clipsToBounds;
+}
 
-- (IBAction)boundsOriginXChanged:(UISlider *)sender {
+- (IBAction)boundsOriginXChanged:(UISlider *)sender
+{
     CGRect purpleFrameBounds =  self.purpleFrame.bounds;
     purpleFrameBounds.origin.x = sender.value;
     self.purpleFrame.bounds = purpleFrameBounds;
     
-    self.boundOriginLabel.text = [NSString stringWithFormat:@"origin x:%f, y:%f",self.purpleFrame.bounds.origin.x, self.purpleFrame.bounds.origin.y];
+    self.boundsOriginXLabel.text = [NSString stringWithFormat:@"origin x:%f",self.purpleFrame.bounds.origin.x];
     [self.greenInset.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self addCenterMark: self.self.greenInset];
 }
 
-- (IBAction)boundsOriginYChanged:(UISlider *)sender {
+- (IBAction)boundsOriginYChanged:(UISlider *)sender
+{
     CGRect purpleFrameBounds =  self.purpleFrame.bounds;
     purpleFrameBounds.origin.y = sender.value;
     self.purpleFrame.bounds = purpleFrameBounds;
     
-    self.boundOriginLabel.text = [NSString stringWithFormat:@"origin x:%f, y:%f",self.purpleFrame.bounds.origin.x, self.purpleFrame.bounds.origin.y];
+    self.boundsOriginYLabel.text = [NSString stringWithFormat:@"origin y:%f", self.purpleFrame.bounds.origin.y];
     [self.greenInset.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self addCenterMark: self.self.greenInset];
 }
 
 
 #pragma mark - CGRectInsets actions
-- (IBAction)greenInsetCGRectInsetsChanged:(UISlider *)sender {
+- (IBAction)greenInsetCGRectInsetsChanged:(UISlider *)sender
+{
     
 //    self.greenInset.frame = CGRectInset(self.purpleFrame.bounds, sender.value, sender.value);
     self.greenInset.bounds = CGRectInset(self.purpleFrame.bounds, sender.value, sender.value);
@@ -69,7 +77,8 @@
 
 
 #pragma mark - large red rectangle actions
-- (IBAction)largeRedRectangleRemoveAddSwitch:(UISwitch *)sender {
+- (IBAction)largeRedRectangleRemoveAddSwitch:(UISwitch *)sender
+{
     if(self.redRect.superview){
         [self.redRect removeFromSuperview];
     }else{
@@ -79,7 +88,8 @@
 }
 
 #pragma mark - purple rectangle actions
-- (IBAction)purpleRectangleRemoveAddSwitch:(UISwitch *)sender {
+- (IBAction)purpleRectangleRemoveAddSwitch:(UISwitch *)sender
+{
 
     if(self.purpleRect.superview){
         [self.purpleRect removeFromSuperview];
@@ -89,16 +99,19 @@
     }
 }
 
-- (IBAction)purpleRectangleViewAlphaChanged:(UISlider *)sender {
+- (IBAction)purpleRectangleViewAlphaChanged:(UISlider *)sender
+{
     self.purpleRect.alpha = sender.value;
 }
 
-- (IBAction)purpleRectangleClipToBounds:(UISwitch *)sender {
+- (IBAction)purpleRectangleClipToBounds:(UISwitch *)sender
+{
     self.purpleRect.clipsToBounds = !self.purpleRect.clipsToBounds;
 }
 
 #pragma mark - Small red square actions
-- (IBAction)smallRedSquareRemoveAddSwitch:(UISwitch *)sender {
+- (IBAction)smallRedSquareRemoveAddSwitch:(UISwitch *)sender
+{
 
     if(self.smallRedSquare.superview){
         [self.smallRedSquare removeFromSuperview];
@@ -108,21 +121,23 @@
     }
 }
 
-- (IBAction)smallRedSquareViewAlphaChanged:(UISlider *)sender {
+- (IBAction)smallRedSquareViewAlphaChanged:(UISlider *)sender
+{
     
     NSLog(@"Setting small red square VIEW alpha to %f", sender.value);
     self.smallRedSquare.alpha = sender.value;
      NSLog(@"Actual alpha is %f", self.smallRedSquare.alpha*sender.value);
 }
 
-- (IBAction)smallRedSquareColorAlphaChanged:(UISlider *)sender {
+- (IBAction)smallRedSquareColorAlphaChanged:(UISlider *)sender
+{
     
     NSLog(@"Setting small red square BACKGROUND COLOR` alpha to %f", sender.value);
     self.smallRedSquare.backgroundColor = [self.smallRedSquare.backgroundColor colorWithAlphaComponent:sender.value];
     NSLog(@"Actual alpha is %f", self.smallRedSquare.alpha*sender.value);
 }
 
-#pragma mark - UIViewController mthods
+#pragma mark - UIViewController methods
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -194,7 +209,7 @@
 //    CGRectInset(CGRect rect, CGFloat dx, CGFloat dy)
     
     self.greenInset = [[UIView alloc] initWithFrame:CGRectInset(self.purpleFrame.bounds, 10, 10)];
-    self. greenInset.backgroundColor = [UIColor colorWithRed:.5 green:1 blue:0 alpha:.5];
+    self. greenInset.backgroundColor = [UIColor colorWithRed:.5 green:1 blue:0 alpha:.8];
     
     UIView* mainView = self.view;
     [mainView addSubview:self.purpleFrame];
