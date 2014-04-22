@@ -13,6 +13,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [self logWindow];
+    [self logMainScreen];
+    
+    
     return YES;
 }
 							
@@ -41,6 +45,16 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void) logWindow
+{
+    NSLog(@"Window is %@", self.window);
+}
+
+- (void) logMainScreen
+{
+    NSLog(@"Main Screen is %@", [UIScreen mainScreen]);
 }
 
 @end
