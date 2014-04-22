@@ -10,14 +10,14 @@
 
 @interface ViewController ()
 
-@property (weak, nonatomic) UIView *smallRedSquare;
+@property (strong, nonatomic) UIView *smallRedSquare;
 
-@property (weak, nonatomic) UIView *purpleRect;
-@property (weak, nonatomic) UIView *greenRect;
-@property (weak, nonatomic) UIView *redRect;
+@property (strong, nonatomic) UIView *purpleRect;
+@property (strong, nonatomic) UIView *greenRect;
+@property (strong, nonatomic) UIView *redRect;
 
-@property (weak, nonatomic) UIView *purpleFrame;
-@property (weak, nonatomic) UIView *greenInset;
+@property (strong, nonatomic) UIView *purpleFrame;
+@property (strong, nonatomic) UIView *greenInset;
 
 @end
 
@@ -40,55 +40,55 @@
 -(void) addSmallRedSquare
 {
     UIView* mainView = self.view;
-    UIView* smallRedSquare = [[UIView alloc] initWithFrame: CGRectMake(100,100,50,50)];
-    smallRedSquare.backgroundColor = [UIColor redColor];
-    [mainView addSubview: smallRedSquare];
+    self.smallRedSquare = [[UIView alloc] initWithFrame: CGRectMake(100,100,50,50)];
+    self.smallRedSquare.backgroundColor = [UIColor redColor];
+    [mainView addSubview: self.smallRedSquare];
     
     [self logView: mainView name: @"mainView"];
     
-    [self logView: smallRedSquare name: @"smallRedSquare"];
+    [self logView: self.smallRedSquare name: @"smallRedSquare"];
 }
 
 - (void) addOverlappingViews
 {
 //    CGRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     
-    UIView *purpleRect = [[UIView alloc] initWithFrame: CGRectMake(113, 111, 132, 194)];
-    purpleRect.backgroundColor = [UIColor colorWithRed:1 green: .4 blue: 1 alpha: 1];
+    self.purpleRect = [[UIView alloc] initWithFrame: CGRectMake(113, 111, 132, 194)];
+    self.purpleRect.backgroundColor = [UIColor colorWithRed:1 green: .4 blue: 1 alpha: 1];
     
-    UIView *greenRect = [[UIView alloc] initWithFrame: CGRectMake(41, 56, 132, 194)];
-    greenRect.backgroundColor = [UIColor colorWithRed: .5 green: 1 blue: 0 alpha: 1];
+    self.greenRect = [[UIView alloc] initWithFrame: CGRectMake(41, 56, 132, 194)];
+    self.greenRect.backgroundColor = [UIColor colorWithRed: .5 green: 1 blue: 0 alpha: 1];
     
-    UIView *redRect = [[UIView alloc] initWithFrame: CGRectMake(43, 197, 160, 230)];
-    redRect.backgroundColor = [UIColor colorWithRed: 1 green: 0 blue: 0 alpha: 1];
+    self.redRect = [[UIView alloc] initWithFrame: CGRectMake(43, 197, 160, 230)];
+    self.redRect.backgroundColor = [UIColor colorWithRed: 1 green: 0 blue: 0 alpha: 1];
     
     UIView* mainView = self.view;
-    [mainView addSubview: purpleRect];
-    [purpleRect addSubview:greenRect];
-    [mainView addSubview:redRect];
+    [mainView addSubview: self.purpleRect];
+    [self.purpleRect addSubview:self.greenRect];
+    [mainView addSubview:self.redRect];
     
-    [self logView: purpleRect name: @"purpleRect"];
-    [self logView: greenRect name: @"greenRect"];
-    [self logView: redRect name: @"redRect"];
+    [self logView: self.purpleRect name: @"purpleRect"];
+    [self logView: self.greenRect name: @"greenRect"];
+    [self logView: self.redRect name: @"redRect"];
     
 }
 
 -(void) addInsetRect
 {
-    UIView* purpleFrame = [[UIView alloc] initWithFrame:CGRectMake(313, 111, 132, 194)];
-    purpleFrame.backgroundColor = [UIColor colorWithRed:1 green:.4 blue:1 alpha:1];
+    self.purpleFrame = [[UIView alloc] initWithFrame:CGRectMake(313, 111, 132, 194)];
+    self.purpleFrame.backgroundColor = [UIColor colorWithRed:1 green:.4 blue:1 alpha:1];
     
 //    CGRectInset(CGRect rect, CGFloat dx, CGFloat dy)
     
-    UIView* greenInset = [[UIView alloc] initWithFrame:CGRectInset(purpleFrame.bounds, 10, 10)];
-    greenInset.backgroundColor = [UIColor colorWithRed:.5 green:1 blue:0 alpha:1];
+    self.greenInset = [[UIView alloc] initWithFrame:CGRectInset(self.purpleFrame.bounds, 10, 10)];
+   self. greenInset.backgroundColor = [UIColor colorWithRed:.5 green:1 blue:0 alpha:1];
     
     UIView* mainView = self.view;
-    [mainView addSubview:purpleFrame];
-    [purpleFrame addSubview:greenInset];
+    [mainView addSubview:self.purpleFrame];
+    [self.purpleFrame addSubview:self.greenInset];
     
-    [self logView:purpleFrame name:@"purpleFrame"];
-    [self logView:greenInset name:@"greenInset"];
+    [self logView:self.purpleFrame name:@"purpleFrame"];
+    [self logView:self.greenInset name:@"greenInset"];
 }
 
 - (void)logView: (UIView*)v name: (NSString*) name
