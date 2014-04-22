@@ -23,6 +23,8 @@
     
     [self overlappingViews];
     
+    [self insetRect];
+    
     // In debugger console enter 'po [self.view recursiveDescription]'
 }
 
@@ -60,6 +62,22 @@
     [self logView: greenRect name: @"greenRect"];
     [self logView: redRect name: @"redRect"];
     
+}
+
+-(void) insetRect
+{
+    UIView* purpleFrame = [[UIView alloc] initWithFrame:CGRectMake(313, 111, 132, 194)];
+    purpleFrame.backgroundColor = [UIColor colorWithRed:1 green:.4 blue:1 alpha:1];
+    
+    UIView* greenInset = [[UIView alloc] initWithFrame:CGRectInset(purpleFrame.bounds, 10, 10)];
+    greenInset.backgroundColor = [UIColor colorWithRed:.5 green:1 blue:0 alpha:1];
+    
+    UIView* mainView = self.view;
+    [mainView addSubview:purpleFrame];
+    [purpleFrame addSubview:greenInset];
+    
+    [self logView:purpleFrame name:@"purpleFrame"];
+    [self logView:greenInset name:@"greenInset"];
 }
 
 - (void)logView: (UIView*)v name: (NSString*) name
