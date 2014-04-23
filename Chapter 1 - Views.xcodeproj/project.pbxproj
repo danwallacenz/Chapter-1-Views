@@ -22,6 +22,8 @@
 		E079D05C1905FC8200A04042 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E079D03B1905FC8200A04042 /* UIKit.framework */; };
 		E079D0641905FC8200A04042 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E079D0621905FC8200A04042 /* InfoPlist.strings */; };
 		E079D0661905FC8200A04042 /* Chapter_1___ViewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E079D0651905FC8200A04042 /* Chapter_1___ViewsTests.m */; };
+		E093B68E19074C35003D6504 /* ConstraintsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E093B68D19074C35003D6504 /* ConstraintsViewController.m */; };
+		E093B69119074D28003D6504 /* ConstrainedView.m in Sources */ = {isa = PBXBuildFile; fileRef = E093B69019074D28003D6504 /* ConstrainedView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,10 @@
 		E079D0611905FC8200A04042 /* Chapter 1 - ViewsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Chapter 1 - ViewsTests-Info.plist"; sourceTree = "<group>"; };
 		E079D0631905FC8200A04042 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E079D0651905FC8200A04042 /* Chapter_1___ViewsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Chapter_1___ViewsTests.m"; sourceTree = "<group>"; };
+		E093B68C19074C35003D6504 /* ConstraintsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstraintsViewController.h; sourceTree = "<group>"; };
+		E093B68D19074C35003D6504 /* ConstraintsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConstraintsViewController.m; sourceTree = "<group>"; };
+		E093B68F19074D28003D6504 /* ConstrainedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstrainedView.h; sourceTree = "<group>"; };
+		E093B69019074D28003D6504 /* ConstrainedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConstrainedView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,10 @@
 				E079D0471905FC8200A04042 /* AppDelegate.m */,
 				E079D0491905FC8200A04042 /* Main_iPhone.storyboard */,
 				E079D04C1905FC8200A04042 /* Main_iPad.storyboard */,
+				E093B68C19074C35003D6504 /* ConstraintsViewController.h */,
+				E093B68D19074C35003D6504 /* ConstraintsViewController.m */,
+				E093B68F19074D28003D6504 /* ConstrainedView.h */,
+				E093B69019074D28003D6504 /* ConstrainedView.m */,
 				E079D04F1905FC8200A04042 /* ViewsViewController.h */,
 				E079D0501905FC8200A04042 /* ViewsViewController.m */,
 				E079D0521905FC8200A04042 /* Images.xcassets */,
@@ -257,8 +267,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E079D0511905FC8200A04042 /* ViewsViewController.m in Sources */,
+				E093B68E19074C35003D6504 /* ConstraintsViewController.m in Sources */,
 				E079D0481905FC8200A04042 /* AppDelegate.m in Sources */,
 				E079D0441905FC8200A04042 /* main.m in Sources */,
+				E093B69119074D28003D6504 /* ConstrainedView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

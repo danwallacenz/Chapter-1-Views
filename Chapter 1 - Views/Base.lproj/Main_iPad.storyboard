@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="rUE-hg-zOd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Views View Controller-->
+        <!--Constraints View Controller - Constraints-->
+        <scene sceneID="jFH-IO-zLG">
+            <objects>
+                <viewController id="ZG8-Bf-SCL" customClass="ConstraintsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Edu-cC-cDW"/>
+                        <viewControllerLayoutGuide type="bottom" id="jDZ-y9-Lew"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SNT-W0-Hor">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Constraints" id="RYe-5C-Ulb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t35-Hb-ZXz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="448" y="93"/>
+        </scene>
+        <!--Views View Controller - Frames and opacity-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewsViewController" sceneMemberID="viewController">
@@ -13,11 +32,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBd-rT-oTp">
-                                <rect key="frame" x="720" y="20" width="304" height="728"/>
+                                <rect key="frame" x="464" y="20" width="304" height="984"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SzG-sL-qTk">
@@ -113,7 +132,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ciy-ys-eEb">
-                                        <rect key="frame" x="20" y="622" width="264" height="88"/>
+                                        <rect key="frame" x="20" y="878" width="264" height="88"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Large Red Rect" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XpD-ih-2FZ">
@@ -148,7 +167,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="utW-Ok-irH">
-                                        <rect key="frame" x="20" y="390" width="264" height="224"/>
+                                        <rect key="frame" x="20" y="390" width="264" height="480"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CGRectInset" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2A-5D-FFR">
@@ -261,8 +280,8 @@
                                     <constraint firstAttribute="trailing" secondItem="ciy-ys-eEb" secondAttribute="trailing" constant="20" id="xGb-FA-5Un"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZJa-wt-4SB">
-                                <rect key="frame" x="408" y="394" width="304" height="354"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZJa-wt-4SB">
+                                <rect key="frame" x="152" y="650" width="304" height="354"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Transforms" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAW-yn-WpN">
@@ -382,8 +401,8 @@
                                     <constraint firstAttribute="height" constant="354" id="lz1-87-Fr8"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h46-o2-3l0">
-                                <rect key="frame" x="507" y="202" width="205" height="184"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h46-o2-3l0">
+                                <rect key="frame" x="251" y="458" width="205" height="184"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shear frame" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LyI-TS-idH">
@@ -430,9 +449,8 @@
                             <constraint firstItem="ZJa-wt-4SB" firstAttribute="top" secondItem="h46-o2-3l0" secondAttribute="bottom" constant="8" id="YNI-G6-QlE"/>
                             <constraint firstAttribute="trailing" secondItem="GBd-rT-oTp" secondAttribute="trailing" id="gEh-02-VTA"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <tabBarItem key="tabBarItem" title="Frames and opacity" id="Fmx-ph-YDP"/>
                     <connections>
                         <outlet property="boundsOriginXLabel" destination="oGh-ym-9tO" id="P1o-jg-toA"/>
                         <outlet property="boundsOriginYLabel" destination="Jlp-tb-vUk" id="f0F-m2-PUB"/>
@@ -448,6 +466,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1542" y="55"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="qWJ-Yj-he8">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="rUE-hg-zOd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="5GD-Bx-v5r">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ZG8-Bf-SCL" kind="relationship" relationship="viewControllers" id="bbg-zM-Pt6"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="aot-Hm-Qz4"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9cm-7O-b4T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-526" y="74"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
