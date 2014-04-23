@@ -1,14 +1,14 @@
 //
-//  ConstrainedView.m
+//  TopBar.m
 //  Chapter 1 - Views
 //
 //  Created by Daniel Wallace [DATACOM] on 23/04/14.
 //  Copyright (c) 2014 Daniel Wallace [DATACOM]. All rights reserved.
 //
 
-#import "ConstrainedView.h"
+#import "TopBar.h"
 
-@implementation ConstrainedView
+@implementation TopBar
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -31,12 +31,7 @@
 - (void)updateConstraints
 {
     [super updateConstraints];
-//    NSLog(@"updateConstraints");
-}
-
-+ (BOOL)requiresConstraintBasedLayout
-{
-    return YES;
+    NSLog(@"updateConstraints for %@", [self class]);
 }
 
 @end
