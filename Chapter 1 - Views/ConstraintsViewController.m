@@ -10,6 +10,7 @@
 #import "ConstrainedView.h"
 #import "TopBar.h"
 #import "BottomSquare.h"
+#import "Frame.h"
 
 @interface ConstraintsViewController ()
 
@@ -45,7 +46,7 @@
     // Do any additional setup after loading the view.
     self.mainView =  self.view;
     
-    self.frameView = [[ConstrainedView alloc] initWithFrame:CGRectMake(100, 111,132,194)];
+    self.frameView = [[Frame alloc] initWithFrame:CGRectMake(100, 111,132,194)];
     self.frameView.backgroundColor = [UIColor colorWithRed:1 green:.4 blue:1 alpha:1];
     
     self.topBar = [TopBar new];
