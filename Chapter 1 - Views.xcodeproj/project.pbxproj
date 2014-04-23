@@ -26,6 +26,7 @@
 		E093B69119074D28003D6504 /* ConstrainedView.m in Sources */ = {isa = PBXBuildFile; fileRef = E093B69019074D28003D6504 /* ConstrainedView.m */; };
 		E093B69419075E55003D6504 /* TopBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E093B69319075E55003D6504 /* TopBar.m */; };
 		E093B69719075E7E003D6504 /* BottomSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = E093B69619075E7E003D6504 /* BottomSquare.m */; };
+		E093B69D190764F9003D6504 /* NSLayoutConstraint+Listing.m in Sources */ = {isa = PBXBuildFile; fileRef = E093B69C190764F9003D6504 /* NSLayoutConstraint+Listing.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		E093B69319075E55003D6504 /* TopBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopBar.m; path = "Chapter 1 - Views/TopBar.m"; sourceTree = "<group>"; };
 		E093B69519075E7E003D6504 /* BottomSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BottomSquare.h; path = "Chapter 1 - Views/BottomSquare.h"; sourceTree = "<group>"; };
 		E093B69619075E7E003D6504 /* BottomSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BottomSquare.m; path = "Chapter 1 - Views/BottomSquare.m"; sourceTree = "<group>"; };
+		E093B69B190764F9003D6504 /* NSLayoutConstraint+Listing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+Listing.h"; sourceTree = "<group>"; };
+		E093B69C190764F9003D6504 /* NSLayoutConstraint+Listing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+Listing.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +196,8 @@
 				E093B69019074D28003D6504 /* ConstrainedView.m */,
 				E093B69219075E55003D6504 /* TopBar.h */,
 				E093B69319075E55003D6504 /* TopBar.m */,
+				E093B69B190764F9003D6504 /* NSLayoutConstraint+Listing.h */,
+				E093B69C190764F9003D6504 /* NSLayoutConstraint+Listing.m */,
 				E093B69519075E7E003D6504 /* BottomSquare.h */,
 				E093B69619075E7E003D6504 /* BottomSquare.m */,
 			);
@@ -300,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E093B69D190764F9003D6504 /* NSLayoutConstraint+Listing.m in Sources */,
 				E079D0511905FC8200A04042 /* ViewsViewController.m in Sources */,
 				E093B68E19074C35003D6504 /* ConstraintsViewController.m in Sources */,
 				E079D0481905FC8200A04042 /* AppDelegate.m in Sources */,

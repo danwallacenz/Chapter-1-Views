@@ -7,6 +7,7 @@
 //
 
 #import "ConstrainedView.h"
+#import "NSLayoutConstraint+Listing.h"
 
 @implementation ConstrainedView
 
@@ -32,6 +33,15 @@
 {
     [super updateConstraints];
 //    NSLog(@"updateConstraints");
+    
+    }
+
+-(void) layoutSubviews
+{
+    [super layoutSubviews];
+    NSLog(@"layoutSubviews for %@",[self class]);
+    [NSLayoutConstraint listConstraints:self];
+
 }
 
 + (BOOL)requiresConstraintBasedLayout

@@ -7,6 +7,7 @@
 //
 
 #import "BottomSquare.h"
+#import "NSLayoutConstraint+Listing.h"
 
 @implementation BottomSquare
 
@@ -37,6 +38,8 @@
     
 //    [self setConstraints];
     [self setConstraintsWithVisualFormat];
+    
+//    [NSLayoutConstraint listConstraints:self];
     
 }
 

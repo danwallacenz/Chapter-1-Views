@@ -7,6 +7,7 @@
 //
 
 #import "TopBar.h"
+#import "NSLayoutConstraint+Listing.h"
 
 @implementation TopBar
 
@@ -37,7 +38,6 @@
     
 //    [self setConstraints];
     [self setConstraintsWithVisualFormat];
-    
 }
 - (void) setConstraints
 {
