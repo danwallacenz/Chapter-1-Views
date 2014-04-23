@@ -21,6 +21,13 @@
 
 @implementation ConstraintsViewController
 
+#pragma mark - actions
+- (IBAction)rotateFrame:(UISlider *)sender {
+    self.frameView.transform = CGAffineTransformMakeRotation(sender.value * M_PI/180.0);
+}
+
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

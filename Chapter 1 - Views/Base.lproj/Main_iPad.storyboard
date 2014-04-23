@@ -15,7 +15,38 @@
                     <view key="view" contentMode="scaleToFill" id="SNT-W0-Hor">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cjt-ES-xnf">
+                                <rect key="frame" x="484" y="20" width="264" height="984"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rotate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WA-PT-p7e">
+                                        <rect key="frame" x="20" y="20" width="51" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="360" translatesAutoresizingMaskIntoConstraints="NO" id="1aY-jA-vYI">
+                                        <rect key="frame" x="77" y="16" width="169" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="rotateFrame:" destination="ZG8-Bf-SCL" eventType="valueChanged" id="1Dh-lY-bZK"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <color key="backgroundColor" red="0.8718065693" green="0.87015282849999998" blue="0.8793339416" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="264" id="vKI-hu-Xli"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jDZ-y9-Lew" firstAttribute="top" secondItem="Cjt-ES-xnf" secondAttribute="bottom" constant="-29" id="9Kq-Cb-Pj9"/>
+                            <constraint firstAttribute="trailing" secondItem="Cjt-ES-xnf" secondAttribute="trailing" constant="20" id="UUH-YJ-JqD"/>
+                            <constraint firstItem="Cjt-ES-xnf" firstAttribute="top" secondItem="Edu-cC-cDW" secondAttribute="bottom" id="iHG-So-knD"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Constraints" id="RYe-5C-Ulb"/>
                 </viewController>
