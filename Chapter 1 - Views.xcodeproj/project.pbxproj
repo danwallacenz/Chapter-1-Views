@@ -202,6 +202,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Daniel Wallace [DATACOM]";
 				TargetAttributes = {
+					E079D0331905FC8200A04042 = {
+						DevelopmentTeam = JP5YDXJS2P;
+					};
 					E079D0571905FC8200A04042 = {
 						TestTargetID = E079D0331905FC8200A04042;
 					};
@@ -390,6 +393,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Chapter 1 - Views/Chapter 1 - Views-Prefix.pch";
 				INFOPLIST_FILE = "Chapter 1 - Views/Chapter 1 - Views-Info.plist";
@@ -403,6 +407,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Chapter 1 - Views/Chapter 1 - Views-Prefix.pch";
 				INFOPLIST_FILE = "Chapter 1 - Views/Chapter 1 - Views-Info.plist";
