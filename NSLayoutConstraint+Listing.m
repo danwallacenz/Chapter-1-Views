@@ -15,6 +15,7 @@
     if (nil == v) {
         v = [[UIApplication sharedApplication] keyWindow];
     }
+    NSLog(@"Layout constraints for %@", [v class]);
     for (UIView *subview in v.subviews) {
         NSArray *horizontalConstraints = [subview constraintsAffectingLayoutForAxis:UILayoutConstraintAxisHorizontal];
         NSArray *verticalConstraints = [subview constraintsAffectingLayoutForAxis:UILayoutConstraintAxisVertical];

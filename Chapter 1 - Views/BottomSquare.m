@@ -38,9 +38,6 @@
     
 //    [self setConstraints];
     [self setConstraintsWithVisualFormat];
-    
-//    [NSLayoutConstraint listConstraints:self];
-    
 }
 
 - (void) setConstraints{
