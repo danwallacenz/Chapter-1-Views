@@ -57,13 +57,13 @@
     [self.frameView addSubview:self.topBar];
     [self.frameView addSubview:self.bottomRightSquare];
     
-    [self addContraints];
+//    [self addContraints];
+    [self addConstraintsWithVisualFormat];
 }
 
 - (void) addContraints
 {
     self.topBar.translatesAutoresizingMaskIntoConstraints = NO;
-    self.bottomRightSquare.translatesAutoresizingMaskIntoConstraints = NO;
     
     // align top bar left to the frame's left.
     [self.frameView addConstraint:[NSLayoutConstraint constraintWithItem:self.topBar attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.frameView attribute:NSLayoutAttributeLeft multiplier:1 constant:0]];
@@ -74,7 +74,9 @@
     // topBar height = 10.
     [self.topBar addConstraint:[NSLayoutConstraint constraintWithItem:self.topBar attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:10]];
     
-   
+    
+    self.bottomRightSquare.translatesAutoresizingMaskIntoConstraints = NO;
+
     // bottomRightSquare width = 20.
     [self.bottomRightSquare addConstraint:[NSLayoutConstraint constraintWithItem:self.bottomRightSquare attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:20]];
     // bottomRightSquare height = 20.
@@ -86,6 +88,28 @@
 
 }
 
+- (void) addConstraintsWithVisualFormat{
+    
+    self.topBar.translatesAutoresizingMaskIntoConstraints = NO;
+    self.bottomRightSquare.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    
+    
+    UIView *topBar = self.topBar;
+    UIView *bottomRightSquare = self.bottomRightSquare;
+    
+    NSDictionary *variableBindings = NSDictionaryOfVariableBindings(topBar, bottomRightSquare);
+    
+    [self.frameView addConstraints:
+        [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[topBar]|" options:0 metrics:nil views:variableBindings]];
+    [self.frameView addConstraints:
+        [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[topBar(10)]" options:0 metrics:nil views:variableBindings]];
+    [self.frameView addConstraints:
+        [NSLayoutConstraint constraintsWithVisualFormat:@"H:[bottomRightSquare(20)]|" options:0 metrics:nil views:variableBindings]];
+    [self.frameView addConstraints:
+        [NSLayoutConstraint constraintsWithVisualFormat:@"V:[bottomRightSquare(20)]|" options:0 metrics:nil views:variableBindings]];
+    
+}
 
 
 - (void)didReceiveMemoryWarning
