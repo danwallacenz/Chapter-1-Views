@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Daniel Wallace [DATACOM]. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ViewsViewController.h"
 
-@interface ViewController ()
+@interface ViewsViewController ()
 
 @property (strong, nonatomic) UIView *smallRedSquare;
 
@@ -40,7 +40,7 @@
 
 @end
 
-@implementation ViewController
+@implementation ViewsViewController
 
 
 #pragma mark - transform actions
