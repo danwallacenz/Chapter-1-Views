@@ -8,6 +8,8 @@
 
 #import "ConstraintsViewController.h"
 #import "ConstrainedView.h"
+#import "TopBar.h"
+#import "BottomSquare.h"
 
 @interface ConstraintsViewController ()
 
@@ -46,10 +48,10 @@
     self.frameView = [[ConstrainedView alloc] initWithFrame:CGRectMake(100, 111,132,194)];
     self.frameView.backgroundColor = [UIColor colorWithRed:1 green:.4 blue:1 alpha:1];
     
-    self.topBar = [ConstrainedView new];
+    self.topBar = [TopBar new];
     self.topBar.backgroundColor = [UIColor colorWithRed:.5 green:1 blue:0 alpha:1];
     
-    self.bottomRightSquare = [ConstrainedView new];
+    self.bottomRightSquare = [BottomSquare new];
     self.bottomRightSquare.backgroundColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:1];
 
     [self.mainView addSubview:self.frameView];
@@ -58,7 +60,7 @@
     [self.frameView addSubview:self.bottomRightSquare];
     
 //    [self addContraints];
-    [self addConstraintsWithVisualFormat];
+//    [self addConstraintsWithVisualFormat];
 }
 
 - (void) addContraints
