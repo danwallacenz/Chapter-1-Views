@@ -30,7 +30,6 @@
 }
 
 
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -60,10 +59,14 @@
     [self.frameView addSubview:self.topBar];
     [self.frameView addSubview:self.bottomRightSquare];
     
+    
+//    Now set in individual views.
+    
 //    [self addContraints];
 //    [self addConstraintsWithVisualFormat];
 }
 
+//    Now set in individual views.
 - (void) addContraints
 {
     self.topBar.translatesAutoresizingMaskIntoConstraints = NO;
@@ -91,6 +94,7 @@
 
 }
 
+//    Now set in individual views.
 - (void) addConstraintsWithVisualFormat{
     
     self.topBar.translatesAutoresizingMaskIntoConstraints = NO;

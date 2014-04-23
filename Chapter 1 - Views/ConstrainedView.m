@@ -8,6 +8,7 @@
 
 #import "ConstrainedView.h"
 #import "NSLayoutConstraint+Listing.h"
+#import "NSLayoutConstraint+Ambiguity.h"
 
 @implementation ConstrainedView
 
@@ -41,7 +42,7 @@
     [super layoutSubviews];
     NSLog(@"layoutSubviews for %@",[self class]);
     [NSLayoutConstraint listConstraints:self];
-
+    [NSLayoutConstraint reportAmbiguity:self];
 }
 
 + (BOOL)requiresConstraintBasedLayout

@@ -28,6 +28,7 @@
 		E093B69719075E7E003D6504 /* BottomSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = E093B69619075E7E003D6504 /* BottomSquare.m */; };
 		E093B69D190764F9003D6504 /* NSLayoutConstraint+Listing.m in Sources */ = {isa = PBXBuildFile; fileRef = E093B69C190764F9003D6504 /* NSLayoutConstraint+Listing.m */; };
 		E093B6A019076EDC003D6504 /* Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = E093B69F19076EDC003D6504 /* Frame.m */; };
+		E093B6A31907748A003D6504 /* NSLayoutConstraint+Ambiguity.m in Sources */ = {isa = PBXBuildFile; fileRef = E093B6A21907748A003D6504 /* NSLayoutConstraint+Ambiguity.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		E093B69C190764F9003D6504 /* NSLayoutConstraint+Listing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+Listing.m"; sourceTree = "<group>"; };
 		E093B69E19076EDC003D6504 /* Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Frame.h; sourceTree = "<group>"; };
 		E093B69F19076EDC003D6504 /* Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Frame.m; sourceTree = "<group>"; };
+		E093B6A11907748A003D6504 /* NSLayoutConstraint+Ambiguity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+Ambiguity.h"; path = "Chapter 1 - Views/NSLayoutConstraint+Ambiguity.h"; sourceTree = "<group>"; };
+		E093B6A21907748A003D6504 /* NSLayoutConstraint+Ambiguity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+Ambiguity.m"; path = "Chapter 1 - Views/NSLayoutConstraint+Ambiguity.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +105,7 @@
 		E079D02B1905FC8200A04042 = {
 			isa = PBXGroup;
 			children = (
+				E093B6A419077496003D6504 /* NSLayoutConstraint categories */,
 				E093B69A1907605F003D6504 /* Views */,
 				E093B69919076045003D6504 /* Storyboards */,
 				E079D03D1905FC8200A04042 /* Chapter 1 - Views */,
@@ -201,12 +205,21 @@
 				E093B69F19076EDC003D6504 /* Frame.m */,
 				E093B69219075E55003D6504 /* TopBar.h */,
 				E093B69319075E55003D6504 /* TopBar.m */,
-				E093B69B190764F9003D6504 /* NSLayoutConstraint+Listing.h */,
-				E093B69C190764F9003D6504 /* NSLayoutConstraint+Listing.m */,
 				E093B69519075E7E003D6504 /* BottomSquare.h */,
 				E093B69619075E7E003D6504 /* BottomSquare.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		E093B6A419077496003D6504 /* NSLayoutConstraint categories */ = {
+			isa = PBXGroup;
+			children = (
+				E093B69B190764F9003D6504 /* NSLayoutConstraint+Listing.h */,
+				E093B69C190764F9003D6504 /* NSLayoutConstraint+Listing.m */,
+				E093B6A11907748A003D6504 /* NSLayoutConstraint+Ambiguity.h */,
+				E093B6A21907748A003D6504 /* NSLayoutConstraint+Ambiguity.m */,
+			);
+			name = "NSLayoutConstraint categories";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,6 +328,7 @@
 				E079D0511905FC8200A04042 /* ViewsViewController.m in Sources */,
 				E093B68E19074C35003D6504 /* ConstraintsViewController.m in Sources */,
 				E079D0481905FC8200A04042 /* AppDelegate.m in Sources */,
+				E093B6A31907748A003D6504 /* NSLayoutConstraint+Ambiguity.m in Sources */,
 				E093B69419075E55003D6504 /* TopBar.m in Sources */,
 				E079D0441905FC8200A04042 /* main.m in Sources */,
 				E093B69719075E7E003D6504 /* BottomSquare.m in Sources */,
