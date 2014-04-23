@@ -35,16 +35,9 @@
     
     self.translatesAutoresizingMaskIntoConstraints = NO;
     
-//    // bottomRightSquare width = 20.
-//    [self addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:20]];
-//    // bottomRightSquare height = 20.
-//    [self addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:20]];
-//    // align bottomRightSquare right to the frame's right.
-//    [self.superview addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeRight multiplier:1 constant:0]];
-//    // align bottomRightSquare bottom to the frame's bottom
-//    [self.superview addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeBottom multiplier:1 constant:0]];
+//    [self setConstraints];
+    [self setConstraintsWithVisualFormat];
     
-    [self setConstraints];
 }
 
 - (void) setConstraints{
@@ -56,6 +49,17 @@
     [self.superview addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeRight multiplier:1 constant:0]];
     // align bottomRightSquare bottom to the frame's bottom
     [self.superview addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeBottom multiplier:1 constant:0]];
+}
+
+- (void) setConstraintsWithVisualFormat
+{
+    
+    NSDictionary *variableBindings = NSDictionaryOfVariableBindings(self);
+    
+    [self.superview addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"H:[self(20)]|" options:0 metrics:nil views:variableBindings]];
+    [self.superview addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"V:[self(20)]|" options:0 metrics:nil views:variableBindings]];
 }
 
 @end
