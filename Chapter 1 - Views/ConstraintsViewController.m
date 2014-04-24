@@ -19,11 +19,14 @@
 @property (strong, nonatomic) ConstrainedView *bottomRightSquare;
 @property (strong, nonatomic) UIView *mainView;
 
-@property (weak, nonatomic) IBOutlet UILabel *widthLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *widthLabel;
+
 @property (weak, nonatomic) IBOutlet UILabel *widthSliderValueLabel;
 @property (weak, nonatomic) IBOutlet UISlider *scaleWidthSlider;
+@property (weak, nonatomic) IBOutlet UISlider *scaleHeightSlider;
+@property (weak, nonatomic) IBOutlet UILabel *heightScaleValueLabel;
 
-@property float previousSliderValue;
+//@property float previousSliderValue;
 
 @end
 
@@ -45,18 +48,22 @@
 //    self.previousSliderValue = sender.value;
 //    
 //    self.frameView.bounds = frameViewBounds;
-//    
+//
+    self.frameView.transform = CGAffineTransformMakeScale(sender.value, self.scaleHeightSlider.value);
+    
 //    self.widthLabel.text = [NSString stringWithFormat:@"%f", self.frameView.bounds.size.width ];
-//    
-//    self.widthSliderValueLabel.text = [NSString stringWithFormat:@"%f", sender.value ];
-//    
+//
+    self.widthSliderValueLabel.text = [NSString stringWithFormat:@"%f", sender.value ];
+//
 //    [self.frameView setNeedsUpdateConstraints];
     
-    self.frameView.transform = CGAffineTransformMakeScale(sender.value, self.scaleWidthSlider.value);
+
 }
 
 - (IBAction)updateHeight:(UISlider *)sender {
-    
+    self.frameView.transform = CGAffineTransformMakeScale(self.scaleWidthSlider.value, sender.value);
+    self.heightScaleValueLabel.text = [NSString stringWithFormat:@"%f", sender.value ];
+
 }
 
 
@@ -89,7 +96,7 @@
     [self.frameView addSubview:self.topBar];
     [self.frameView addSubview:self.bottomRightSquare];
     
-    self.previousSliderValue = 0;
+//    self.previousSliderValue = 0;
     
 //    Now set in individual views.
     
