@@ -109,6 +109,7 @@
                     <connections>
                         <outlet property="heightLabel" destination="IXJ-CZ-59R" id="3uV-og-bwi"/>
                         <outlet property="heightScaleValueLabel" destination="D0a-7r-hdF" id="px6-vt-xKh"/>
+                        <outlet property="rotateSlider" destination="1aY-jA-vYI" id="qNV-gk-Ow9"/>
                         <outlet property="scaleHeightSlider" destination="lhh-DK-GOi" id="aH7-np-hkY"/>
                         <outlet property="scaleWidthSlider" destination="6Gf-5c-VoM" id="kv6-4e-vQ2"/>
                         <outlet property="widthLabel" destination="1fh-7v-swE" id="OkQ-xu-Y9c"/>

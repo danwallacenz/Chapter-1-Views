@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *widthLabel;
 @property (weak, nonatomic) IBOutlet UILabel *heightLabel;
 
+@property (weak, nonatomic) IBOutlet UISlider *rotateSlider;
 
 //@property float previousSliderValue;
 
@@ -42,7 +43,14 @@
 
 - (IBAction)updateWidth:(UISlider *)sender {
     NSLog(@"frame width before: %f", self.frameView.frame.size.width);
-    self.frameView.transform = CGAffineTransformMakeScale(sender.value, self.scaleHeightSlider.value);
+    // do any rotation first
+//    self.frameView.transform = CGAffineTransformMakeRotation(self.rotateSlider.value * M_PI/180.0);
+    CGAffineTransform rotate = CGAffineTransformMakeRotation(self.rotateSlider.value * M_PI/180.0);
+    CGAffineTransform scaleWidth = CGAffineTransformMakeScale(sender.value, self.scaleHeightSlider.value);
+//    self.frameView.transform = CGAffineTransformMakeScale(sender.value, self.scaleHeightSlider.value);
+    
+    self.frameView.transform = CGAffineTransformConcat(scaleWidth, rotate);
+    
     self.widthLabel.text = [NSString stringWithFormat:@"%f", self.frameView.frame.size.width ];
     
     NSLog(@"frame width after%f", self.frameView.frame.size.width);
