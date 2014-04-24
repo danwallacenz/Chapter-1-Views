@@ -97,13 +97,19 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="6UG-up-vBm">
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-100" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="6UG-up-vBm">
                                         <rect key="frame" x="17" y="304" width="229" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="redSquareRHSDistanceChanged:" destination="ZG8-Bf-SCL" eventType="valueChanged" id="ASJ-8H-fhg"/>
                                         </connections>
                                     </slider>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.000000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0do-Me-sjd">
+                                        <rect key="frame" x="20" y="342" width="224" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.8718065693" green="0.87015282849999998" blue="0.8793339416" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -123,6 +129,7 @@
                         <outlet property="heightLabel" destination="IXJ-CZ-59R" id="3uV-og-bwi"/>
                         <outlet property="heightScaleValueLabel" destination="D0a-7r-hdF" id="px6-vt-xKh"/>
                         <outlet property="redSquareRHSDistanceSlider" destination="6UG-up-vBm" id="e5H-jL-gwx"/>
+                        <outlet property="rhsConstraintValueLabel" destination="0do-Me-sjd" id="7kp-OP-tHT"/>
                         <outlet property="rotateSlider" destination="1aY-jA-vYI" id="qNV-gk-Ow9"/>
                         <outlet property="scaleHeightSlider" destination="lhh-DK-GOi" id="aH7-np-hkY"/>
                         <outlet property="scaleWidthSlider" destination="6Gf-5c-VoM" id="kv6-4e-vQ2"/>

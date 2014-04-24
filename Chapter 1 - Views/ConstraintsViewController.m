@@ -29,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *heightLabel;
 
 @property (weak, nonatomic) IBOutlet UISlider *rotateSlider;
+@property (weak, nonatomic) IBOutlet UILabel *rhsConstraintValueLabel;
 
 //@property float previousSliderValue;
 @property (weak, nonatomic) IBOutlet UISlider *redSquareRHSDistanceSlider;
@@ -42,12 +43,10 @@
 
 
 - (IBAction)redSquareRHSDistanceChanged:(UISlider *)sender {
-//    self.bottomRightSquare.distanceOfBottomRedSquareFromRightSide = sender.value;
     
     [self.bottomRightSquare updateDistanceOfRedSquareFromRHS: sender.value];
-//    [self.bottomRightSquare setNeedsUpdateConstraints];
+    self.rhsConstraintValueLabel.text = [NSString stringWithFormat:@"%f",sender.value];
 }
-
 
 - (IBAction)rotateFrame:(UISlider *)sender {
     self.frameView.transform = CGAffineTransformMakeRotation(sender.value * M_PI/180.0);

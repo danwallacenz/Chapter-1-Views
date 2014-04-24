@@ -82,7 +82,7 @@
     // Old version
     //    [self.superview addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeRight multiplier:1 constant:0]];
     
-    NSLog(@"distanceOfBottomRedSquareFromRightSide=%f", self.distanceOfBottomRedSquareFromRightSide);
+//    NSLog(@"distanceOfBottomRedSquareFromRightSide=%f", self.distanceOfBottomRedSquareFromRightSide);
     
     if(!self.distanceFromRightSideConstraint){
         self.distanceFromRightSideConstraint = [NSLayoutConstraint constraintWithItem:self
@@ -94,7 +94,7 @@
     }
 
     // Set the constant here!!
-    self.distanceFromRightSideConstraint.constant = -self.distanceOfBottomRedSquareFromRightSide;
+    self.distanceFromRightSideConstraint.constant = self.distanceOfBottomRedSquareFromRightSide; // negative value
     
     [self.superview addConstraint:self.distanceFromRightSideConstraint];
     
@@ -106,15 +106,6 @@
                                                               multiplier:1
                                                                 constant:0]];
 }
-
-//-(void) layoutSubviews
-//{
-////    [super layoutSubviews];
-//    [self.superview removeConstraint:self.distanceFromRightSideConstraint];
-//    [self.superview addConstraint:self.distanceFromRightSideConstraint];
-////    [super layoutSubviews];
-//    
-//}
 
 - (void) setConstraintsWithVisualFormat
 {
