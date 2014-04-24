@@ -16,7 +16,7 @@
 
 @property (strong, nonatomic) ConstrainedView *frameView;
 @property (strong, nonatomic) ConstrainedView *topBar;
-@property (strong, nonatomic) ConstrainedView *bottomRightSquare;
+@property (strong, nonatomic) BottomSquare *bottomRightSquare;
 @property (strong, nonatomic) UIView *mainView;
 
 //@property (weak, nonatomic) IBOutlet UILabel *widthLabel;
@@ -31,12 +31,24 @@
 @property (weak, nonatomic) IBOutlet UISlider *rotateSlider;
 
 //@property float previousSliderValue;
+@property (weak, nonatomic) IBOutlet UISlider *redSquareRHSDistanceSlider;
 
 @end
 
 @implementation ConstraintsViewController
 
 #pragma mark - actions
+
+
+
+- (IBAction)redSquareRHSDistanceChanged:(UISlider *)sender {
+//    self.bottomRightSquare.distanceOfBottomRedSquareFromRightSide = sender.value;
+    
+    [self.bottomRightSquare updateDistanceOfRedSquareFromRHS: sender.value];
+//    [self.bottomRightSquare setNeedsUpdateConstraints];
+}
+
+
 - (IBAction)rotateFrame:(UISlider *)sender {
     self.frameView.transform = CGAffineTransformMakeRotation(sender.value * M_PI/180.0);
 }

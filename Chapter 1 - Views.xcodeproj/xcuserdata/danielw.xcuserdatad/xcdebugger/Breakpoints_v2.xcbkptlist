@@ -54,11 +54,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Chapter 1 - Views/BottomSquare.m"
-            timestampString = "420003168.977586"
+            timestampString = "420005543.06861"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "-setConstraints"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chapter 1 - Views/BottomSquare.m"
+            timestampString = "420005380.107653"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "-setConstraints"
             landmarkType = "5">
          </BreakpointContent>

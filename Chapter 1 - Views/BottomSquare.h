@@ -12,4 +12,6 @@
 
 @property CGFloat distanceOfBottomRedSquareFromRightSide;
 
+-(void) updateDistanceOfRedSquareFromRHS: (CGFloat) distance;
+
 @end
