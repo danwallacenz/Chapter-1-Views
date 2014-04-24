@@ -13,7 +13,7 @@
 
 @property (strong, nonatomic) NSLayoutConstraint *distanceFromRightSideConstraint;
 
-//@property CGFloat distanceOfBottomRedSquareFromRightSide;
+@property CGFloat distanceOfBottomRedSquareFromRightSide;
 
 @end
 
@@ -26,30 +26,19 @@
         // Initialization code
     }
     
-//    self.distanceFromRightSideConstraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeRight multiplier:1 constant:0];
-    
     self.distanceOfBottomRedSquareFromRightSide = 0;
     
     return self;
 }
 
+/**
+ setNeedsUpdateConstraints called!
+ */
 -(void) updateDistanceOfRedSquareFromRHS: (CGFloat) distance
 {
     self.distanceOfBottomRedSquareFromRightSide = distance;
-    [self setNeedsUpdateConstraints];
+    [self setNeedsUpdateConstraints]; // Important!!!
 }
-
-//- (void) setDistanceOfBottomRedSquareFromRightSide:(CGFloat) distance
-//{
-//    distanceOfBottomRedSquareFromRightSide = distance;
-//    self.distanceFromRightSideConstraint.constant = self.distanceOfBottomRedSquareFromRightSide;
-//    [self setNeedsUpdateConstraints];
-//}
-//
-//-(CGFloat) distanceOfBottomRedSquareFromRightSide
-//{
-//    return self.distanceOfBottomRedSquareFromRightSide;
-//}
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -68,45 +57,64 @@
     self.translatesAutoresizingMaskIntoConstraints = NO;
     
     [self setConstraints];
-    
 //    [self setConstraintsWithVisualFormat];
 }
 
 - (void) setConstraints{
     // bottomRightSquare width = 20.
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:20]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self
+                                                     attribute:NSLayoutAttributeWidth
+                                                     relatedBy:NSLayoutRelationEqual
+                                                        toItem:nil
+                                                     attribute:NSLayoutAttributeNotAnAttribute
+                                                    multiplier:1
+                                                      constant:20]];
     // bottomRightSquare height = 20.
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:20]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self
+                                                     attribute:NSLayoutAttributeHeight
+                                                     relatedBy:NSLayoutRelationEqual
+                                                        toItem:nil
+                                                     attribute:NSLayoutAttributeNotAnAttribute
+                                                    multiplier:1
+                                                      constant:20]];
     
-    // align bottomRightSquare right to the frame's right.
-//    [self.superview addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeRight multiplier:1 constant:0]];
+    // align bottomRightSquare right to the frame's right. Allow for customization of horizontal distance.
+    // Old version
+    //    [self.superview addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeRight multiplier:1 constant:0]];
     
     NSLog(@"distanceOfBottomRedSquareFromRightSide=%f", self.distanceOfBottomRedSquareFromRightSide);
     
-    
     if(!self.distanceFromRightSideConstraint){
-        self.distanceFromRightSideConstraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeRight multiplier:1 constant:self.distanceOfBottomRedSquareFromRightSide];
-
-//                self.distanceFromRightSideConstraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeRight multiplier:1 constant:0];
-        
+        self.distanceFromRightSideConstraint = [NSLayoutConstraint constraintWithItem:self
+                                                                            attribute:NSLayoutAttributeRight
+                                                                            relatedBy:NSLayoutRelationEqual
+                                                                               toItem:self.superview attribute:NSLayoutAttributeRight
+                                                                           multiplier:1
+                                                                             constant:self.distanceOfBottomRedSquareFromRightSide];
     }
 
+    // Set the constant here!!
     self.distanceFromRightSideConstraint.constant = -self.distanceOfBottomRedSquareFromRightSide;
     
     [self.superview addConstraint:self.distanceFromRightSideConstraint];
     
     // align bottomRightSquare bottom to the frame's bottom
-    [self.superview addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeBottom multiplier:1 constant:0]];
+    [self.superview addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom
+                                                               relatedBy:NSLayoutRelationEqual
+                                                                  toItem:self.superview
+                                                               attribute:NSLayoutAttributeBottom
+                                                              multiplier:1
+                                                                constant:0]];
 }
 
--(void) layoutSubviews
-{
-    [super layoutSubviews];
-    [self.superview removeConstraint:self.distanceFromRightSideConstraint];
-    [self.superview addConstraint:self.distanceFromRightSideConstraint];
-    [super layoutSubviews];
-    
-}
+//-(void) layoutSubviews
+//{
+////    [super layoutSubviews];
+//    [self.superview removeConstraint:self.distanceFromRightSideConstraint];
+//    [self.superview addConstraint:self.distanceFromRightSideConstraint];
+////    [super layoutSubviews];
+//    
+//}
 
 - (void) setConstraintsWithVisualFormat
 {
