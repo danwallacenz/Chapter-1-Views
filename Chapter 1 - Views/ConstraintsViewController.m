@@ -25,6 +25,9 @@
 @property (weak, nonatomic) IBOutlet UISlider *scaleWidthSlider;
 @property (weak, nonatomic) IBOutlet UISlider *scaleHeightSlider;
 @property (weak, nonatomic) IBOutlet UILabel *heightScaleValueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *widthLabel;
+@property (weak, nonatomic) IBOutlet UILabel *heightLabel;
+
 
 //@property float previousSliderValue;
 
@@ -38,32 +41,21 @@
 }
 
 - (IBAction)updateWidth:(UISlider *)sender {
-//    CGRect frameViewBounds =  self.frameView.bounds;
-//    
-//    if(sender.value > self.previousSliderValue){
-//        frameViewBounds.size.width = sender.value + frameViewBounds.size.width;
-//    }else{
-//        frameViewBounds.size.width = sender.value - frameViewBounds.size.width;
-//    }
-//    self.previousSliderValue = sender.value;
-//    
-//    self.frameView.bounds = frameViewBounds;
-//
+    NSLog(@"frame width before: %f", self.frameView.frame.size.width);
     self.frameView.transform = CGAffineTransformMakeScale(sender.value, self.scaleHeightSlider.value);
+    self.widthLabel.text = [NSString stringWithFormat:@"%f", self.frameView.frame.size.width ];
     
-//    self.widthLabel.text = [NSString stringWithFormat:@"%f", self.frameView.bounds.size.width ];
-//
+    NSLog(@"frame width after%f", self.frameView.frame.size.width);
     self.widthSliderValueLabel.text = [NSString stringWithFormat:@"%f", sender.value ];
-//
-//    [self.frameView setNeedsUpdateConstraints];
-    
-
 }
 
 - (IBAction)updateHeight:(UISlider *)sender {
+    NSLog(@"frame height before: %f", self.frameView.frame.size.height);
     self.frameView.transform = CGAffineTransformMakeScale(self.scaleWidthSlider.value, sender.value);
+    NSLog(@"frame height after: %f", self.frameView.frame.size.height);
+        self.heightLabel.text = [NSString stringWithFormat:@"%f", self.frameView.frame.size.height ];
+    
     self.heightScaleValueLabel.text = [NSString stringWithFormat:@"%f", sender.value ];
-
 }
 
 

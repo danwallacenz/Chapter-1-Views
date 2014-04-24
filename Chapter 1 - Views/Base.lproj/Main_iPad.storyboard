@@ -67,16 +67,28 @@
                                         </connections>
                                     </slider>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1.000000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQy-YJ-K71">
-                                        <rect key="frame" x="20" y="150" width="103" height="21"/>
+                                        <rect key="frame" x="96" y="150" width="103" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1.000000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0a-7r-hdF">
-                                        <rect key="frame" x="20" y="246" width="72" height="21"/>
+                                        <rect key="frame" x="96" y="246" width="72" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fh-7v-swE">
+                                        <rect key="frame" x="79" y="86" width="165" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXJ-CZ-59R">
+                                        <rect key="frame" x="79" y="179" width="165" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -95,9 +107,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Constraints" id="RYe-5C-Ulb"/>
                     <connections>
+                        <outlet property="heightLabel" destination="IXJ-CZ-59R" id="3uV-og-bwi"/>
                         <outlet property="heightScaleValueLabel" destination="D0a-7r-hdF" id="px6-vt-xKh"/>
                         <outlet property="scaleHeightSlider" destination="lhh-DK-GOi" id="aH7-np-hkY"/>
                         <outlet property="scaleWidthSlider" destination="6Gf-5c-VoM" id="kv6-4e-vQ2"/>
+                        <outlet property="widthLabel" destination="1fh-7v-swE" id="OkQ-xu-Y9c"/>
                         <outlet property="widthSliderValueLabel" destination="aQy-YJ-K71" id="uGf-xg-MR1"/>
                     </connections>
                 </viewController>
