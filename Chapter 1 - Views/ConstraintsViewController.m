@@ -41,27 +41,34 @@
     self.frameView.transform = CGAffineTransformMakeRotation(sender.value * M_PI/180.0);
 }
 
+// concatenate transforms
 - (IBAction)updateWidth:(UISlider *)sender {
-    NSLog(@"frame width before: %f", self.frameView.frame.size.width);
+//    NSLog(@"frame width before: %f", self.frameView.frame.size.width);
     // do any rotation first
-//    self.frameView.transform = CGAffineTransformMakeRotation(self.rotateSlider.value * M_PI/180.0);
+
     CGAffineTransform rotate = CGAffineTransformMakeRotation(self.rotateSlider.value * M_PI/180.0);
     CGAffineTransform scaleWidth = CGAffineTransformMakeScale(sender.value, self.scaleHeightSlider.value);
-//    self.frameView.transform = CGAffineTransformMakeScale(sender.value, self.scaleHeightSlider.value);
-    
+
     self.frameView.transform = CGAffineTransformConcat(scaleWidth, rotate);
     
     self.widthLabel.text = [NSString stringWithFormat:@"%f", self.frameView.frame.size.width ];
     
-    NSLog(@"frame width after%f", self.frameView.frame.size.width);
+//    NSLog(@"frame width after%f", self.frameView.frame.size.width);
     self.widthSliderValueLabel.text = [NSString stringWithFormat:@"%f", sender.value ];
 }
 
+// concatenate transforms
 - (IBAction)updateHeight:(UISlider *)sender {
-    NSLog(@"frame height before: %f", self.frameView.frame.size.height);
-    self.frameView.transform = CGAffineTransformMakeScale(self.scaleWidthSlider.value, sender.value);
-    NSLog(@"frame height after: %f", self.frameView.frame.size.height);
-        self.heightLabel.text = [NSString stringWithFormat:@"%f", self.frameView.frame.size.height ];
+//    NSLog(@"frame height before: %f", self.frameView.frame.size.height);
+    
+    
+    CGAffineTransform rotate = CGAffineTransformMakeRotation(self.rotateSlider.value * M_PI/180.0);
+    CGAffineTransform scaleHeight = CGAffineTransformMakeScale(self.scaleWidthSlider.value, sender.value);
+    
+    self.frameView.transform = CGAffineTransformConcat(scaleHeight, rotate);
+    
+//    NSLog(@"frame height after: %f", self.frameView.frame.size.height);
+    self.heightLabel.text = [NSString stringWithFormat:@"%f", self.frameView.frame.size.height ];
     
     self.heightScaleValueLabel.text = [NSString stringWithFormat:@"%f", sender.value ];
 }
