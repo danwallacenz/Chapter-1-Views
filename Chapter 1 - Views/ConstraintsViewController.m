@@ -56,7 +56,9 @@
 }
 
 - (IBAction)rotateFrame:(UISlider *)sender {
-    self.frameView.transform = CGAffineTransformMakeRotation(sender.value * M_PI/180.0);
+    CGAffineTransform rotate = CGAffineTransformMakeRotation(self.rotateSlider.value * M_PI/180.0);
+    CGAffineTransform scaleWidth = CGAffineTransformMakeScale(self.scaleWidthSlider.value, self.scaleHeightSlider.value);
+    self.frameView.transform = CGAffineTransformConcat(scaleWidth, rotate);
 }
 
 // concatenate transforms
@@ -65,7 +67,7 @@
     // do any rotation first
 
     CGAffineTransform rotate = CGAffineTransformMakeRotation(self.rotateSlider.value * M_PI/180.0);
-    CGAffineTransform scaleWidth = CGAffineTransformMakeScale(sender.value, self.scaleHeightSlider.value);
+    CGAffineTransform scaleWidth = CGAffineTransformMakeScale(self.scaleWidthSlider.value, self.scaleHeightSlider.value);
 
     self.frameView.transform = CGAffineTransformConcat(scaleWidth, rotate);
     
