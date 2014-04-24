@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NSLayoutConstraint+Listing.m"
-            timestampString = "419916090.426796"
+            filePath = "Frame.m"
+            timestampString = "420000925.230013"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "+listConstraints:"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "-layoutSubviews"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -7,6 +7,7 @@
 //
 
 #import "Frame.h"
+#import "NSLayoutConstraint+Listing.h"
 
 @implementation Frame
 
@@ -27,5 +28,14 @@
     // Drawing code
 }
 */
+
+-(void) layoutSubviews
+{
+    [super layoutSubviews];
+    NSLog(@"layoutSubviews for %@",[self class]);
+    [NSLayoutConstraint listConstraints:self];
+//    [NSLayoutConstraint reportAmbiguity:self];
+}
+
 
 @end

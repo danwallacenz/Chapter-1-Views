@@ -41,7 +41,7 @@
 {
     [super layoutSubviews];
     NSLog(@"layoutSubviews for %@",[self class]);
-    [NSLayoutConstraint listConstraints:self];
+//    [NSLayoutConstraint listConstraints:self];
     [NSLayoutConstraint reportAmbiguity:self];
 }
 
