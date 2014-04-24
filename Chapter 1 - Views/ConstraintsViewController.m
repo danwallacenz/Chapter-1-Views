@@ -109,7 +109,8 @@
     // Do any additional setup after loading the view.
     self.mainView =  self.view;
     
-    self.frameView = [[Frame alloc] initWithFrame:CGRectMake(100, 111,132,194)];
+//    self.frameView = [[Frame alloc] initWithFrame:CGRectMake(100, 111,132,194)];
+    self.frameView = [Frame new];
     self.frameView.backgroundColor = [UIColor colorWithRed:1 green:.4 blue:1 alpha:1];
     
     self.topBar = [TopBar new];
@@ -123,6 +124,8 @@
     [self.frameView addSubview:self.topBar];
     [self.frameView addSubview:self.bottomRightSquare];
     
+//    self.frameView.translatesAutoresizingMaskIntoConstraints = NO;
+    
 //    self.previousSliderValue = 0;
     
 //    Now set in individual views.
@@ -134,7 +137,8 @@
 //    Now set in individual views.
 - (void) addContraints
 {
-    self.topBar.translatesAutoresizingMaskIntoConstraints = NO;
+    
+//    self.topBar.translatesAutoresizingMaskIntoConstraints = NO;
     
     // align top bar left to the frame's left.
     [self.frameView addConstraint:[NSLayoutConstraint constraintWithItem:self.topBar attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.frameView attribute:NSLayoutAttributeLeft multiplier:1 constant:0]];

@@ -10,40 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frame.m"
-            timestampString = "420001731.077604"
+            timestampString = "420076027.840008"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Frame.m"
-            timestampString = "420001917.424329"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Chapter 1 - Views/BottomSquare.m"
-            timestampString = "420012322.839505"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "-initWithFrame:"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "-setConstraints"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -53,12 +25,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Chapter 1 - Views/BottomSquare.m"
-            timestampString = "420012606.537772"
+            filePath = "Frame.m"
+            timestampString = "420076027.840008"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "-setConstraints"
             landmarkType = "5">
          </BreakpointContent>
