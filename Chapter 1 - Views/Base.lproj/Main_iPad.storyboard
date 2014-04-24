@@ -97,6 +97,12 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Red square bottom distance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTE-29-JbO">
+                                        <rect key="frame" x="20" y="371" width="218" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-100" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="6UG-up-vBm">
                                         <rect key="frame" x="17" y="304" width="229" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -106,6 +112,19 @@
                                     </slider>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.000000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0do-Me-sjd">
                                         <rect key="frame" x="20" y="342" width="224" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-100" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="bfA-eU-cqg">
+                                        <rect key="frame" x="18" y="400" width="228" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="redSquareBottomDistanceChanged:" destination="ZG8-Bf-SCL" eventType="valueChanged" id="W1P-eB-uyk"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.000000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqP-X3-ai6">
+                                        <rect key="frame" x="20" y="438" width="224" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
@@ -126,8 +145,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Constraints" id="RYe-5C-Ulb"/>
                     <connections>
+                        <outlet property="bottomConstraintValueLabel" destination="kqP-X3-ai6" id="Oez-AU-rpI"/>
                         <outlet property="heightLabel" destination="IXJ-CZ-59R" id="3uV-og-bwi"/>
                         <outlet property="heightScaleValueLabel" destination="D0a-7r-hdF" id="px6-vt-xKh"/>
+                        <outlet property="redSquareBottomDistanceSlider" destination="bfA-eU-cqg" id="EWK-YI-eSd"/>
                         <outlet property="redSquareRHSDistanceSlider" destination="6UG-up-vBm" id="e5H-jL-gwx"/>
                         <outlet property="rhsConstraintValueLabel" destination="0do-Me-sjd" id="7kp-OP-tHT"/>
                         <outlet property="rotateSlider" destination="1aY-jA-vYI" id="qNV-gk-Ow9"/>

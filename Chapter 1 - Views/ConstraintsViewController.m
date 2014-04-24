@@ -30,9 +30,11 @@
 
 @property (weak, nonatomic) IBOutlet UISlider *rotateSlider;
 @property (weak, nonatomic) IBOutlet UILabel *rhsConstraintValueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bottomConstraintValueLabel;
 
 //@property float previousSliderValue;
 @property (weak, nonatomic) IBOutlet UISlider *redSquareRHSDistanceSlider;
+@property (weak, nonatomic) IBOutlet UISlider *redSquareBottomDistanceSlider;
 
 @end
 
@@ -40,6 +42,11 @@
 
 #pragma mark - actions
 
+- (IBAction)redSquareBottomDistanceChanged:(UISlider *)sender {
+    
+    [self.bottomRightSquare updateDistanceOfRedSquareFromBottom: sender.value];
+    self.bottomConstraintValueLabel.text = [NSString stringWithFormat:@"%f",sender.value];
+}
 
 
 - (IBAction)redSquareRHSDistanceChanged:(UISlider *)sender {

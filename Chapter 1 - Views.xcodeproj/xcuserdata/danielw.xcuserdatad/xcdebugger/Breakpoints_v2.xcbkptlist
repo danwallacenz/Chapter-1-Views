@@ -38,11 +38,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Chapter 1 - Views/BottomSquare.m"
-            timestampString = "420003168.977586"
+            timestampString = "420012322.839505"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "-initWithFrame:"
             landmarkType = "5">
          </BreakpointContent>
@@ -54,11 +54,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Chapter 1 - Views/BottomSquare.m"
-            timestampString = "420011437.048303"
+            timestampString = "420012606.537772"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "-setConstraints"
             landmarkType = "5">
          </BreakpointContent>
