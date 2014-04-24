@@ -10,4 +10,6 @@
 
 @interface BottomSquare : ConstrainedView
 
+@property CGFloat distanceOfBottomRedSquareFromRightSide;
+
 @end
