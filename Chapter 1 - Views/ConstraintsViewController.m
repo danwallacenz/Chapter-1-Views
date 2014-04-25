@@ -21,7 +21,10 @@
 
 @property (strong, nonatomic) UIView *mainView;
 
+// Priorities
 @property (strong, nonatomic) ConstrainedView *prioritiesFrameView;
+@property (strong, nonatomic) UILabel *prioritiesLabel;
+@property (strong, nonatomic) UIButton *prioritiesButton;
 
 
 @property (weak, nonatomic) IBOutlet UILabel *widthSliderValueLabel;
@@ -116,7 +119,42 @@
     self.prioritiesFrameView.backgroundColor = [UIColor colorWithRed: 0.9 green:.9 blue: 0.9 alpha: 0.9];
 
     [self.mainView addSubview:self.prioritiesFrameView];
+    
+    self.prioritiesButton = [UIButton new];
+    self.prioritiesButton.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.5];
+//    self.prioritiesButton.titleLabel.text = @"button";
+    [self.prioritiesButton setTitle:@"⬆︎" forState:UIControlStateNormal];
+    [self.prioritiesButton setTitle:@"⬇︎" forState:UIControlStateHighlighted];
+    
+    [self.prioritiesFrameView addSubview:self.prioritiesButton];
+    
+    self.prioritiesLabel = [UILabel new];
+    self.prioritiesLabel.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.5];
 
+    self.prioritiesLabel.text = @"label";
+    [self.prioritiesFrameView addSubview:self.prioritiesLabel];
+    
+    [self layoutPrioritiesFrame];
+}
+
+-(void)layoutPrioritiesFrame
+{
+    self.prioritiesLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    self.prioritiesButton.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    
+    UIButton *prioritiesButtonLocal = self.prioritiesButton;
+    UILabel *prioritiesLabelLocal = self.prioritiesLabel;
+    
+    NSDictionary *variableBindings = NSDictionaryOfVariableBindings(prioritiesButtonLocal, prioritiesLabelLocal);
+
+    
+    [self.prioritiesFrameView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[prioritiesButtonLocal]-(112)-|" options:0 metrics:nil views: variableBindings]];
+    [self.prioritiesFrameView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(>=10)-[prioritiesLabelLocal]-[prioritiesButtonLocal]-(>=10)-|" options:NSLayoutFormatAlignAllBaseline metrics:nil views:variableBindings]];
+    NSLayoutConstraint *con =  [NSLayoutConstraint constraintWithItem:self.prioritiesButton attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.prioritiesFrameView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0];
+    con.priority = 700;
+    [self.prioritiesFrameView addConstraint:con];
+    
 }
 
 - (void)didReceiveMemoryWarning
