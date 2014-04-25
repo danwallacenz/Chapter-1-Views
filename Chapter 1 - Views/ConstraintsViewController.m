@@ -161,9 +161,20 @@
     NSDictionary *variableBindings = NSDictionaryOfVariableBindings(prioritiesButtonLocal, prioritiesLabelLocal);
 
     
-    [self.prioritiesFrameView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[prioritiesButtonLocal]-(112)-|" options:0 metrics:nil views: variableBindings]];
-    [self.prioritiesFrameView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(>=10)-[prioritiesLabelLocal]-[prioritiesButtonLocal]-(>=10)-|" options:NSLayoutFormatAlignAllBaseline metrics:nil views:variableBindings]];
-    self.prioritiesButtonCenterConstraint =  [NSLayoutConstraint constraintWithItem:self.prioritiesButton attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.prioritiesFrameView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0];
+    [self.prioritiesFrameView addConstraints:[NSLayoutConstraint
+                                              constraintsWithVisualFormat:@"V:[prioritiesButtonLocal]-(112)-|"
+                                              options:0 metrics:nil views: variableBindings]];
+    
+    [self.prioritiesFrameView addConstraints:[NSLayoutConstraint
+                                              constraintsWithVisualFormat:@"H:|-(>=10)-[prioritiesLabelLocal]-[prioritiesButtonLocal]-(>=10)-|"
+                                              options:NSLayoutFormatAlignAllBaseline metrics:nil views:variableBindings]];
+    
+    self.prioritiesButtonCenterConstraint = [NSLayoutConstraint constraintWithItem:self.prioritiesButton
+                                                                         attribute:NSLayoutAttributeCenterX
+                                                                         relatedBy:NSLayoutRelationEqual
+                                                                            toItem:self.prioritiesFrameView
+                                                                         attribute:NSLayoutAttributeCenterX
+                                                                        multiplier:1 constant:0];
     self.prioritiesButtonCenterConstraint.priority = 700;
     [self.prioritiesFrameView addConstraint:self.prioritiesButtonCenterConstraint];
     
