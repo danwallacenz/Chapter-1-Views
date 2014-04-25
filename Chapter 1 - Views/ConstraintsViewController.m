@@ -11,13 +11,18 @@
 #import "TopBar.h"
 #import "BottomSquare.h"
 #import "Frame.h"
+#import "PrioritiesFrameView.h"
 
 @interface ConstraintsViewController ()
 
 @property (strong, nonatomic) ConstrainedView *frameView;
 @property (strong, nonatomic) ConstrainedView *topBar;
 @property (strong, nonatomic) BottomSquare *bottomRightSquare;
+
 @property (strong, nonatomic) UIView *mainView;
+
+@property (strong, nonatomic) ConstrainedView *prioritiesFrameView;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *widthSliderValueLabel;
 @property (weak, nonatomic) IBOutlet UISlider *scaleWidthSlider;
@@ -106,6 +111,12 @@
     
     [self.frameView addSubview:self.topBar];
     [self.frameView addSubview:self.bottomRightSquare];
+    
+    self.prioritiesFrameView = [PrioritiesFrameView new];
+    self.prioritiesFrameView.backgroundColor = [UIColor colorWithRed: 0.9 green:.9 blue: 0.9 alpha: 0.9];
+
+    [self.mainView addSubview:self.prioritiesFrameView];
+
 }
 
 - (void)didReceiveMemoryWarning

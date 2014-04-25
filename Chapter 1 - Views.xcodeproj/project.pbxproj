@@ -29,6 +29,7 @@
 		E093B69D190764F9003D6504 /* NSLayoutConstraint+Listing.m in Sources */ = {isa = PBXBuildFile; fileRef = E093B69C190764F9003D6504 /* NSLayoutConstraint+Listing.m */; };
 		E093B6A019076EDC003D6504 /* Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = E093B69F19076EDC003D6504 /* Frame.m */; };
 		E093B6A31907748A003D6504 /* NSLayoutConstraint+Ambiguity.m in Sources */ = {isa = PBXBuildFile; fileRef = E093B6A21907748A003D6504 /* NSLayoutConstraint+Ambiguity.m */; };
+		E0FDEAC01909F6D40006DE0A /* PrioritiesFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FDEABF1909F6D40006DE0A /* PrioritiesFrameView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,8 @@
 		E093B69F19076EDC003D6504 /* Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Frame.m; sourceTree = "<group>"; };
 		E093B6A11907748A003D6504 /* NSLayoutConstraint+Ambiguity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+Ambiguity.h"; path = "Chapter 1 - Views/NSLayoutConstraint+Ambiguity.h"; sourceTree = "<group>"; };
 		E093B6A21907748A003D6504 /* NSLayoutConstraint+Ambiguity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+Ambiguity.m"; path = "Chapter 1 - Views/NSLayoutConstraint+Ambiguity.m"; sourceTree = "<group>"; };
+		E0FDEABE1909F6D40006DE0A /* PrioritiesFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrioritiesFrameView.h; path = "Chapter 1 - Views/PrioritiesFrameView.h"; sourceTree = "<group>"; };
+		E0FDEABF1909F6D40006DE0A /* PrioritiesFrameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PrioritiesFrameView.m; path = "Chapter 1 - Views/PrioritiesFrameView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +202,8 @@
 		E093B69A1907605F003D6504 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E0FDEABE1909F6D40006DE0A /* PrioritiesFrameView.h */,
+				E0FDEABF1909F6D40006DE0A /* PrioritiesFrameView.m */,
 				E093B68F19074D28003D6504 /* ConstrainedView.h */,
 				E093B69019074D28003D6504 /* ConstrainedView.m */,
 				E093B69E19076EDC003D6504 /* Frame.h */,
@@ -323,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0FDEAC01909F6D40006DE0A /* PrioritiesFrameView.m in Sources */,
 				E093B6A019076EDC003D6504 /* Frame.m in Sources */,
 				E093B69D190764F9003D6504 /* NSLayoutConstraint+Listing.m in Sources */,
 				E079D0511905FC8200A04042 /* ViewsViewController.m in Sources */,
