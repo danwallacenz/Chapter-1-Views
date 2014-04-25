@@ -109,7 +109,7 @@
     // Do any additional setup after loading the view.
     self.mainView =  self.view;
     
-//    self.frameView = [[Frame alloc] initWithFrame:CGRectMake(100, 111,132,194)];
+//    self.frameView = [[Frame alloc] initWithFrame:CGRectMake(100, 111,132,194)]; // Now using constraints
     self.frameView = [Frame new];
     self.frameView.backgroundColor = [UIColor colorWithRed:1 green:.4 blue:1 alpha:1];
     
