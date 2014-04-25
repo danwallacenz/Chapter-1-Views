@@ -117,14 +117,11 @@
 #pragma mark - CGRectInsets actions
 - (IBAction)greenInsetCGRectInsetsChanged:(UISlider *)sender
 {
-    
-//    self.greenInset.frame = CGRectInset(self.purpleFrame.bounds, sender.value, sender.value);
+
     self.greenInset.bounds = CGRectInset(self.purpleFrame.bounds, sender.value, sender.value);
     
     [self.greenInset.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self addCenterMark: self.self.greenInset];
-    
-//    [self addCenterMark: self.self.purpleFrame];
     
     self.insetsLabel.text = [NSString stringWithFormat:@"%f", sender.value];
 

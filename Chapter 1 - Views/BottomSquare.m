@@ -93,11 +93,6 @@
                                                       constant:20]];
     
     // align bottomRightSquare right to the frame's right. Allow for customization of horizontal distance.
-    // Old version
-    //    [self.superview addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeRight multiplier:1 constant:0]];
-    
-//    NSLog(@"distanceOfBottomRedSquareFromRightSide=%f", self.distanceOfBottomRedSquareFromRightSide);
-    
     if(!self.distanceFromRightSideConstraint){
         self.distanceFromRightSideConstraint = [NSLayoutConstraint constraintWithItem:self
                                                                             attribute:NSLayoutAttributeRight
@@ -113,12 +108,6 @@
     [self.superview addConstraint:self.distanceFromRightSideConstraint];
     
     // align bottomRightSquare bottom to the frame's bottom
-//    [self.superview addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom
-//                                                               relatedBy:NSLayoutRelationEqual
-//                                                                  toItem:self.superview
-//                                                               attribute:NSLayoutAttributeBottom
-//                                                              multiplier:1
-//                                                                constant:0]];
     if(!self.distanceFromBottomConstraint){
         self.distanceFromBottomConstraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom
                                                                          relatedBy:NSLayoutRelationEqual

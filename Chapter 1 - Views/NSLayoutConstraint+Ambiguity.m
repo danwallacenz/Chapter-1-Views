@@ -17,7 +17,6 @@
     }
     
     for (UIView *subview in v.subviews) {
-//        NSLog(@"Ambiguous layout: %@ %d", subview, subview.hasAmbiguousLayout);
         
         if(subview.hasAmbiguousLayout){
             NSLog(@"Ambiguous layout: %@ %d", subview, subview.hasAmbiguousLayout);
