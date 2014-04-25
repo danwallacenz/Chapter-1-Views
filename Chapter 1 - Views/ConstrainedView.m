@@ -33,15 +33,13 @@
 - (void)updateConstraints
 {
     [super updateConstraints];
-//    NSLog(@"updateConstraints");
     
-    }
+}
 
 -(void) layoutSubviews
 {
     [super layoutSubviews];
-    NSLog(@"layoutSubviews for %@",[self class]);
-//    [NSLayoutConstraint listConstraints:self];
+    NSLog(@"layoutSubviews for %@",[self class]);;
     [NSLayoutConstraint reportAmbiguity:self];
 }
 

@@ -43,20 +43,22 @@
 - (void) setConstraints
 {
     //    self.frameView = [[Frame alloc] initWithFrame:CGRectMake(100, 111,132,194)];
-    
-//    [NSLayoutConstraint listConstraints:self];
+    CGFloat HEIGHT = 194;
+    CGFloat WIDTH = 132;
+    CGFloat ORIGIN_X = 100;
+    CGFloat ORIGIN_Y = 111;
     
     // align frame left to the view's's left.
-    [self.superview addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeLeft multiplier:1 constant:100 + 132/2]];
+    [self.superview addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeLeft multiplier:1 constant:ORIGIN_X + WIDTH/2]];
 
     // align frame top to the frame's top
-    [self.superview addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeTop multiplier:1 constant:194 + 194/2]];
-    // frame height = 132.
+    [self.superview addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeTop multiplier:1 constant:ORIGIN_Y + HEIGHT/2]];
+
+    // frame height = 194.
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:HEIGHT]];
     
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:194]];
-    
-    // frame width = 194.
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:132]];
+    // frame width = 132.
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:WIDTH]];
 }
 
 -(void) layoutSubviews
