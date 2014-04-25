@@ -26,6 +26,8 @@
 @property (strong, nonatomic) UILabel *prioritiesLabel;
 @property (strong, nonatomic) UIButton *prioritiesButton;
 
+@property (strong, nonatomic) NSLayoutConstraint *prioritiesButtonCenterConstraint;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *widthSliderValueLabel;
 @property (weak, nonatomic) IBOutlet UISlider *scaleWidthSlider;
@@ -151,9 +153,9 @@
     
     [self.prioritiesFrameView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[prioritiesButtonLocal]-(112)-|" options:0 metrics:nil views: variableBindings]];
     [self.prioritiesFrameView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(>=10)-[prioritiesLabelLocal]-[prioritiesButtonLocal]-(>=10)-|" options:NSLayoutFormatAlignAllBaseline metrics:nil views:variableBindings]];
-    NSLayoutConstraint *con =  [NSLayoutConstraint constraintWithItem:self.prioritiesButton attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.prioritiesFrameView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0];
-    con.priority = 700;
-    [self.prioritiesFrameView addConstraint:con];
+    self.prioritiesButtonCenterConstraint =  [NSLayoutConstraint constraintWithItem:self.prioritiesButton attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.prioritiesFrameView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0];
+    self.prioritiesButtonCenterConstraint.priority = 700;
+    [self.prioritiesFrameView addConstraint:self.prioritiesButtonCenterConstraint];
     
 }
 
