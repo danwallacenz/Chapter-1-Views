@@ -28,6 +28,7 @@
 
 @property (strong, nonatomic) NSLayoutConstraint *prioritiesButtonCenterConstraint;
 
+@property (weak, nonatomic) IBOutlet UITextField *prioritiesLabelTextField;
 
 @property (weak, nonatomic) IBOutlet UILabel *widthSliderValueLabel;
 @property (weak, nonatomic) IBOutlet UISlider *scaleWidthSlider;
@@ -48,6 +49,10 @@
 @implementation ConstraintsViewController
 
 #pragma mark - actions
+
+- (IBAction)prioritiesLabelTextEditingChanged:(UITextField *)sender {
+    self.prioritiesLabel.text = sender.text;
+}
 
 - (IBAction)redSquareBottomDistanceChanged:(UISlider *)sender {
     
