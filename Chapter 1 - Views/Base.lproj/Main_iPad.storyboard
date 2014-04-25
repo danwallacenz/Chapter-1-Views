@@ -155,6 +155,31 @@
                                                     <action selector="prioritiesLabelTextEditingChanged:" destination="ZG8-Bf-SCL" eventType="editingChanged" id="TXp-h5-OcD"/>
                                                 </connections>
                                             </textField>
+                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="700" minValue="1" maxValue="999" translatesAutoresizingMaskIntoConstraints="NO" id="Klc-gO-I1O">
+                                                <rect key="frame" x="18" y="112" width="189" height="31"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="buttonCenteringPriorityChanged:" destination="ZG8-Bf-SCL" eventType="valueChanged" id="0Tk-5L-OSR"/>
+                                                </connections>
+                                            </slider>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Button center priority" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fcm-Sh-alJ">
+                                                <rect key="frame" x="20" y="83" width="185" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Priority:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Viq-eq-1fx">
+                                                <rect key="frame" x="20" y="150" width="59" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="700.000000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEk-bN-Zg1">
+                                                <rect key="frame" x="87" y="150" width="118" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.90054744529999997" green="0.94497034670000002" blue="0.93980953469999995" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
@@ -175,6 +200,7 @@
                     <tabBarItem key="tabBarItem" title="Constraints" id="RYe-5C-Ulb"/>
                     <connections>
                         <outlet property="bottomConstraintValueLabel" destination="kqP-X3-ai6" id="Oez-AU-rpI"/>
+                        <outlet property="buttonCenterPriorityValueLabel" destination="PEk-bN-Zg1" id="CqI-9M-Grs"/>
                         <outlet property="heightLabel" destination="IXJ-CZ-59R" id="3uV-og-bwi"/>
                         <outlet property="heightScaleValueLabel" destination="D0a-7r-hdF" id="px6-vt-xKh"/>
                         <outlet property="prioritiesLabelTextField" destination="cUY-ng-wpu" id="OIl-v6-yxg"/>

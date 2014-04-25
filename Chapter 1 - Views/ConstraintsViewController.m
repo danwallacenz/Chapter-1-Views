@@ -25,10 +25,10 @@
 @property (strong, nonatomic) ConstrainedView *prioritiesFrameView;
 @property (strong, nonatomic) UILabel *prioritiesLabel;
 @property (strong, nonatomic) UIButton *prioritiesButton;
-
 @property (strong, nonatomic) NSLayoutConstraint *prioritiesButtonCenterConstraint;
-
 @property (weak, nonatomic) IBOutlet UITextField *prioritiesLabelTextField;
+@property (weak, nonatomic) IBOutlet UILabel *buttonCenterPriorityValueLabel;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *widthSliderValueLabel;
 @property (weak, nonatomic) IBOutlet UISlider *scaleWidthSlider;
@@ -49,6 +49,12 @@
 @implementation ConstraintsViewController
 
 #pragma mark - actions
+
+- (IBAction)buttonCenteringPriorityChanged:(UISlider *)sender {
+    self.prioritiesButtonCenterConstraint.priority = sender.value;
+    self.buttonCenterPriorityValueLabel.text = [NSString stringWithFormat:@"%f", sender.value];
+}
+
 
 - (IBAction)prioritiesLabelTextEditingChanged:(UITextField *)sender {
     self.prioritiesLabel.text = sender.text;
@@ -129,7 +135,6 @@
     
     self.prioritiesButton = [UIButton new];
     self.prioritiesButton.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.5];
-//    self.prioritiesButton.titleLabel.text = @"button";
     [self.prioritiesButton setTitle:@"⬆︎" forState:UIControlStateNormal];
     [self.prioritiesButton setTitle:@"⬇︎" forState:UIControlStateHighlighted];
     
