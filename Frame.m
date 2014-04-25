@@ -44,13 +44,13 @@
 {
     //    self.frameView = [[Frame alloc] initWithFrame:CGRectMake(100, 111,132,194)];
     
-[NSLayoutConstraint listConstraints:self];
+//    [NSLayoutConstraint listConstraints:self];
     
     // align frame left to the view's's left.
-    [self.superview addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeLeft multiplier:1 constant:100]];
+    [self.superview addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeLeft multiplier:1 constant:100 + 132/2]];
 
     // align frame top to the frame's top
-    [self.superview addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeTop multiplier:1 constant:194]];
+    [self.superview addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeTop multiplier:1 constant:194 + 194/2]];
     // frame height = 132.
     
     [self addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:194]];
@@ -65,6 +65,8 @@
     NSLog(@"layoutSubviews for %@",[self class]);
     [NSLayoutConstraint listConstraints:self];
     [NSLayoutConstraint reportAmbiguity:self.superview];
+    
+//    po [[UIWindow keyWindow] _autolayoutTrace];
 }
 
 
