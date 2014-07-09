@@ -7,12 +7,15 @@
 //
 
 #import "CoordinateSystemsViewController.h"
+#import "OverlayLayer.h"
 
 @interface CoordinateSystemsViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *blueSquare;
 @property (weak, nonatomic) IBOutlet UIView *redSquare;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
+
+@property  (strong, nonatomic) OverlayLayer *overlayLayer;
 
 @end
 
@@ -43,14 +46,31 @@
     NSString *blueSquareDescription = [NSString stringWithFormat:@" blueSquareFrame = %@\n blueSquareOrigin = %@\n blueSquareBounds = %@\n blueSquareCenter = %@\n\n",blueSquareFrame, blueSquareOrigin, blueSquareBounds, blueSquareCenter];
     
     NSString *redSquareDescription = [NSString stringWithFormat:@" redSquareFrame = %@\n redSquareOrigin = %@\n redSquareBounds = %@\n redSquareCenter = %@\n",redSquareFrame, redSquareOrigin, redSquareBounds, redSquareCenter];
-    
-    
-//convertPoint:fromView:
-//convertPoint:toView:
-//convertRect:fromView:
-//convertRect:toView:
-    
+
     self.textView.text = [NSString stringWithFormat:@"%@%@",blueSquareDescription,redSquareDescription];
+    
+    self.overlayLayer = [OverlayLayer new];
+    [self.view.layer addSublayer:  self.overlayLayer];
+    [self.overlayLayer setNeedsDisplay];
 }
 
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    //convertPoint:fromView:
+    //convertPoint:toView:
+    //convertRect:fromView:
+    //convertRect:toView:
+    
+//    NSLog(@"\n\nself.blueSquare convertPoint: self.redSquare.frame.origin toView: self.blueSquare]=%@\n\n",NSStringFromCGPoint( [self.blueSquare convertPoint:self.redSquare.frame.origin toView:self.blueSquare]));
+   
+    NSLog(@"[\n\nself.blueSquare convertPoint: self.redSquare.frame.origin toView: self.view]=%@\n\n",NSStringFromCGPoint( [self.blueSquare convertPoint:self.redSquare.frame.origin toView:self.view]));
+    
+//    NSLog(@"\n\nself.blueSquare convertPoint: self.redSquare.frame.origin fromView: self.blueSquare]=%@\n\n",NSStringFromCGPoint( [self.blueSquare convertPoint:self.redSquare.frame.origin fromView:self.blueSquare]));
+    
+    NSLog(@"[\n\nself.blueSquare convertPoint: self.redSquare.frame.origin fromView: self.view]=%@\n\n",NSStringFromCGPoint( [self.blueSquare convertPoint:self.redSquare.frame.origin fromView: self.view]));
+    
+}
 @end

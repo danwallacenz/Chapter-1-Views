@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CBCC49FA196DD13700F49DD6 /* OverlayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCC49F8196DD13700F49DD6 /* OverlayLayer.m */; };
 		E05CB7A7196D0CE6000A0D77 /* CoordinateSystemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05CB7A6196D0CE6000A0D77 /* CoordinateSystemsViewController.m */; };
 		E079D0381905FC8200A04042 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E079D0371905FC8200A04042 /* Foundation.framework */; };
 		E079D03A1905FC8200A04042 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E079D0391905FC8200A04042 /* CoreGraphics.framework */; };
@@ -44,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CBCC49F8196DD13700F49DD6 /* OverlayLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayLayer.m; sourceTree = "<group>"; };
+		CBCC49F9196DD13700F49DD6 /* OverlayLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayLayer.h; sourceTree = "<group>"; };
 		E05CB7A5196D0CE6000A0D77 /* CoordinateSystemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoordinateSystemsViewController.h; sourceTree = "<group>"; };
 		E05CB7A6196D0CE6000A0D77 /* CoordinateSystemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoordinateSystemsViewController.m; sourceTree = "<group>"; };
 		E079D0341905FC8200A04042 /* Chapter 1 - Views.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chapter 1 - Views.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,9 +111,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CBCC49FB196DD13E00F49DD6 /* grid */ = {
+			isa = PBXGroup;
+			children = (
+				CBCC49F8196DD13700F49DD6 /* OverlayLayer.m */,
+				CBCC49F9196DD13700F49DD6 /* OverlayLayer.h */,
+			);
+			name = grid;
+			sourceTree = "<group>";
+		};
 		E079D02B1905FC8200A04042 = {
 			isa = PBXGroup;
 			children = (
+				CBCC49FB196DD13E00F49DD6 /* grid */,
 				E093B6A419077496003D6504 /* NSLayoutConstraint categories */,
 				E093B69A1907605F003D6504 /* Views */,
 				E093B69919076045003D6504 /* Storyboards */,
@@ -339,6 +352,7 @@
 				E079D0511905FC8200A04042 /* ViewsViewController.m in Sources */,
 				E093B68E19074C35003D6504 /* ConstraintsViewController.m in Sources */,
 				E079D0481905FC8200A04042 /* AppDelegate.m in Sources */,
+				CBCC49FA196DD13700F49DD6 /* OverlayLayer.m in Sources */,
 				E093B6A31907748A003D6504 /* NSLayoutConstraint+Ambiguity.m in Sources */,
 				E093B69419075E55003D6504 /* TopBar.m in Sources */,
 				E079D0441905FC8200A04042 /* main.m in Sources */,
