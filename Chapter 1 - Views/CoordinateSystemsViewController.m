@@ -44,6 +44,12 @@
     
     NSString *redSquareDescription = [NSString stringWithFormat:@" redSquareFrame = %@\n redSquareOrigin = %@\n redSquareBounds = %@\n redSquareCenter = %@\n",redSquareFrame, redSquareOrigin, redSquareBounds, redSquareCenter];
     
+    
+//convertPoint:fromView:
+//convertPoint:toView:
+//convertRect:fromView:
+//convertRect:toView:
+    
     self.textView.text = [NSString stringWithFormat:@"%@%@",blueSquareDescription,redSquareDescription];
 }
 
