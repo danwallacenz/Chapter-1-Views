@@ -231,11 +231,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DaP-ez-mmq">
-                                <rect key="frame" x="100" y="120" width="500" height="400"/>
+                                <rect key="frame" x="100" y="120" width="400" height="400"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vuc-3W-ESy">
-                                        <rect key="frame" x="60" y="60" width="200" height="200"/>
+                                        <rect key="frame" x="100" y="100" width="200" height="200"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" red="0.91764712333679199" green="0.40000003576278687" blue="0.24313727021217346" alpha="1" colorSpace="deviceRGB"/>
                                         <constraints>
@@ -246,9 +246,9 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.4998845478024716" green="0.53249973845192144" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Vuc-3W-ESy" firstAttribute="leading" secondItem="DaP-ez-mmq" secondAttribute="leading" constant="60" id="HZt-Um-4W0"/>
-                                    <constraint firstItem="Vuc-3W-ESy" firstAttribute="top" secondItem="DaP-ez-mmq" secondAttribute="top" constant="60" id="O4b-YA-20J"/>
-                                    <constraint firstAttribute="width" constant="500" id="V9Z-ri-vTk"/>
+                                    <constraint firstItem="Vuc-3W-ESy" firstAttribute="leading" secondItem="DaP-ez-mmq" secondAttribute="leading" constant="100" id="HZt-Um-4W0"/>
+                                    <constraint firstItem="Vuc-3W-ESy" firstAttribute="top" secondItem="DaP-ez-mmq" secondAttribute="top" constant="100" id="O4b-YA-20J"/>
+                                    <constraint firstAttribute="width" constant="400" id="V9Z-ri-vTk"/>
                                     <constraint firstAttribute="height" constant="400" id="qwp-vB-1NH"/>
                                 </constraints>
                             </view>
