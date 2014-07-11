@@ -54,6 +54,10 @@
     [self.overlayLayer setNeedsDisplay];
 }
 
+//- (BOOL)prefersStatusBarHidden
+//{
+//    return YES;
+//}
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -64,13 +68,54 @@
     //convertRect:fromView:
     //convertRect:toView:
     
+        NSLog(@"\n\n\nCONVERTING POINTS\n\n");
+    
 //    NSLog(@"\n\nself.blueSquare convertPoint: self.redSquare.frame.origin toView: self.blueSquare]=%@\n\n",NSStringFromCGPoint( [self.blueSquare convertPoint:self.redSquare.frame.origin toView:self.blueSquare]));
    
-    NSLog(@"[\n\nself.blueSquare convertPoint: self.redSquare.frame.origin toView: self.view]=%@\n\n",NSStringFromCGPoint( [self.blueSquare convertPoint:self.redSquare.frame.origin toView:self.view]));
+//    CGPoint p0 = [self.view convertPoint:self.redSquare.frame.origin toView:self.view];
+//    NSLog(@"[\n\nself.view convertPoint: self.redSquare.frame.origin toView: self.view]=%@\n\n",NSStringFromCGPoint(p0));
     
+    CGPoint p1TO = [self.blueSquare convertPoint:self.redSquare.frame.origin toView:self.view];
+    NSLog(@"\n\n[self.blueSquare convertPoint: self.redSquare.frame.origin toView: self.view]=%@\n\n",NSStringFromCGPoint(p1TO));
+    
+    CGPoint p1FROM = [self.blueSquare convertPoint:self.redSquare.frame.origin fromView:self.view];
+    NSLog(@"\n\n[self.blueSquare convertPoint: self.redSquare.frame.origin fromView: self.view]=%@\n\n",NSStringFromCGPoint(p1FROM));
+    
+//    CGPoint p11 = [self.blueSquare convertPoint:self.redSquare.frame.origin fromView:self.view];
+//    NSLog(@"[\n\nself.blueSquare convertPoint: self.redSquare.frame.origin fromView: self.view]=%@\n\n",NSStringFromCGPoint(p11));
+    
+//    CGPoint p2 = [self.redSquare convertPoint:self.redSquare.frame.origin toView:self.view];
+//    NSLog(@"[\n\nself.redSquare convertPoint: self.redSquare.frame.origin toView: self.view]=%@\n\n",NSStringFromCGPoint(p2));
+    
+    CGPoint p2TO = [self.blueSquare convertPoint:self.redSquare.frame.origin toView:self.blueSquare];
+    NSLog(@"\n\n[self.blueSquare convertPoint:self.redSquare.frame.origin toView:self.blueSquare]=%@\n\n",NSStringFromCGPoint(p2TO));
+    
+    CGPoint p2FROM = [self.blueSquare convertPoint:self.redSquare.frame.origin fromView:self.blueSquare];
+    NSLog(@"\n\n[self.blueSquare convertPoint:self.redSquare.frame.origin fromView:self.blueSquare=%@\n\n",NSStringFromCGPoint(p2FROM));
 //    NSLog(@"\n\nself.blueSquare convertPoint: self.redSquare.frame.origin fromView: self.blueSquare]=%@\n\n",NSStringFromCGPoint( [self.blueSquare convertPoint:self.redSquare.frame.origin fromView:self.blueSquare]));
     
-    NSLog(@"[\n\nself.blueSquare convertPoint: self.redSquare.frame.origin fromView: self.view]=%@\n\n",NSStringFromCGPoint( [self.blueSquare convertPoint:self.redSquare.frame.origin fromView: self.view]));
+//    NSLog(@"[\n\nself.blueSquare convertPoint: self.redSquare.frame.origin fromView: self.view]=%@\n\n",NSStringFromCGPoint( [self.blueSquare convertPoint:self.redSquare.frame.origin fromView: self.view]));
+    
+    NSLog(@"\n\n\nCONVERTING RECTS\n\n");
+    
+    CGRect r1TO = [self.blueSquare convertRect:self.redSquare.frame toView:self.view];
+    NSLog(@"\n\n[self.blueSquare convertRect:self.redSquare.frame toView:self.view]=%@\n\n",NSStringFromCGRect(r1TO));
+    
+    CGRect r1FROM = [self.blueSquare convertRect:self.redSquare.frame fromView:self.view];
+    NSLog(@"\n\n[self.blueSquare convertRect:self.redSquare.frame fromView:self.view]=%@\n\n",NSStringFromCGRect(r1FROM));
+    
+
+    CGRect r2TO = [self.blueSquare convertRect:self.redSquare.frame toView:self.blueSquare];
+    NSLog(@"\n\n[self.blueSquare convertRect:self.redSquare.frame toView:self.blueSquare]=%@\n\n",NSStringFromCGRect(r2TO));
+    
+    CGRect r2FROM = [self.blueSquare convertRect:self.redSquare.frame fromView:self.blueSquare];
+    NSLog(@"\n\n[self.blueSquare convertRect:self.redSquare.frame fromView:self.blueSquare];=%@\n\n",NSStringFromCGRect(r2FROM));
+    
+    CGRect r2TONIL = [self.blueSquare convertRect:self.redSquare.frame toView:nil];
+    NSLog(@"\n\n[self.blueSquare convertRect:self.redSquare.frame toView:nil]=%@\n\n",NSStringFromCGRect(r2TONIL));
+    
+    CGRect r2FROMNIL = [self.blueSquare convertRect:self.redSquare.frame fromView:nil];
+    NSLog(@"\n\n[self.blueSquare convertRect:self.redSquare.frame fromView:nil]=%@\n\n",NSStringFromCGRect(r2TONIL));
     
 }
 @end
