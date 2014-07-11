@@ -99,23 +99,32 @@
     NSLog(@"\n\n\nCONVERTING RECTS\n\n");
     
     CGRect r1TO = [self.blueSquare convertRect:self.redSquare.frame toView:self.view];
-    NSLog(@"\n\n[self.blueSquare convertRect:self.redSquare.frame toView:self.view]=%@\n\n",NSStringFromCGRect(r1TO));
+    NSString *r1TOString = [NSString stringWithFormat: @"\n[\nself.blueSquare convertRect:self.redSquare.frame toView:self.view]=%@\n", NSStringFromCGRect(r1TO)];
+    NSLog(@"%@", r1TOString);
+    self.textView.text = [self.textView.text stringByAppendingString:r1TOString];
     
     CGRect r1FROM = [self.blueSquare convertRect:self.redSquare.frame fromView:self.view];
     NSLog(@"\n\n[self.blueSquare convertRect:self.redSquare.frame fromView:self.view]=%@\n\n",NSStringFromCGRect(r1FROM));
     
 
     CGRect r2TO = [self.blueSquare convertRect:self.redSquare.frame toView:self.blueSquare];
-    NSLog(@"\n\n[self.blueSquare convertRect:self.redSquare.frame toView:self.blueSquare]=%@\n\n",NSStringFromCGRect(r2TO));
+    NSString *r2TOString = [NSString stringWithFormat: @"\n[self.blueSquare convertRect:self.redSquare.frame toView:self.blueSquare]=%@\n", NSStringFromCGRect(r2TO)];
+//    NSLog(@"\n\n[self.blueSquare convertRect:self.redSquare.frame toView:self.blueSquare]=%@\n\n",NSStringFromCGRect(r2TO));
+    NSLog(@"%@", r2TOString);
+    self.textView.text = [self.textView.text stringByAppendingString:r2TOString];
     
     CGRect r2FROM = [self.blueSquare convertRect:self.redSquare.frame fromView:self.blueSquare];
     NSLog(@"\n\n[self.blueSquare convertRect:self.redSquare.frame fromView:self.blueSquare];=%@\n\n",NSStringFromCGRect(r2FROM));
     
     CGRect r2TONIL = [self.blueSquare convertRect:self.redSquare.frame toView:nil];
-    NSLog(@"\n\n[self.blueSquare convertRect:self.redSquare.frame toView:nil]=%@\n\n",NSStringFromCGRect(r2TONIL));
-    
-    CGRect r2FROMNIL = [self.blueSquare convertRect:self.redSquare.frame fromView:nil];
-    NSLog(@"\n\n[self.blueSquare convertRect:self.redSquare.frame fromView:nil]=%@\n\n",NSStringFromCGRect(r2TONIL));
+    NSString *r2TONILString = [NSString stringWithFormat: @"\n[self.blueSquare convertRect:self.redSquare.frame toView:nil]=%@\n\n",NSStringFromCGRect(r2TONIL)];
+//    NSLog(@"\n\n[self.blueSquare convertRect:self.redSquare.frame toView:nil]=%@\n\n",NSStringFromCGRect(r2TONIL));
+    NSLog(@"%@", r2TONILString);
+    self.textView.text = [self.textView.text stringByAppendingString:r2TONILString];
+
+
+//    CGRect r2FROMNIL = [self.blueSquare convertRect:self.redSquare.frame fromView:nil];
+//    NSLog(@"\n\n[self.blueSquare convertRect:self.redSquare.frame fromView:nil]=%@\n\n",NSStringFromCGRect(r2FROMNIL));
     
 }
 @end

@@ -231,7 +231,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DaP-ez-mmq">
-                                <rect key="frame" x="100" y="120" width="500" height="500"/>
+                                <rect key="frame" x="100" y="120" width="500" height="400"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vuc-3W-ESy">
@@ -249,26 +249,25 @@
                                     <constraint firstItem="Vuc-3W-ESy" firstAttribute="leading" secondItem="DaP-ez-mmq" secondAttribute="leading" constant="60" id="HZt-Um-4W0"/>
                                     <constraint firstItem="Vuc-3W-ESy" firstAttribute="top" secondItem="DaP-ez-mmq" secondAttribute="top" constant="60" id="O4b-YA-20J"/>
                                     <constraint firstAttribute="width" constant="500" id="V9Z-ri-vTk"/>
-                                    <constraint firstAttribute="height" constant="500" id="qwp-vB-1NH"/>
+                                    <constraint firstAttribute="height" constant="400" id="qwp-vB-1NH"/>
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6te-gG-2vA">
-                                <rect key="frame" x="20" y="628" width="580" height="326"/>
+                                <rect key="frame" x="20" y="528" width="728" height="426"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.81568634510040283" green="0.58823531866073608" blue="0.91764712333679199" alpha="1" colorSpace="deviceRGB"/>
-                                <color key="textColor" red="1" green="0.95235199221939604" blue="0.026247900085055509" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.090196080509999998" green="0.69411766529999996" blue="0.69019609689999994" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
-                            <constraint firstItem="6te-gG-2vA" firstAttribute="trailing" secondItem="DaP-ez-mmq" secondAttribute="trailing" id="4C3-yd-JDn"/>
                             <constraint firstItem="DaP-ez-mmq" firstAttribute="top" secondItem="OJK-bX-2sM" secondAttribute="top" constant="100" id="JWb-kL-Cbt"/>
                             <constraint firstItem="6te-gG-2vA" firstAttribute="leading" secondItem="6Nk-lX-Wrd" secondAttribute="leading" constant="20" symbolic="YES" id="Jlh-Y2-zWl"/>
                             <constraint firstItem="DaP-ez-mmq" firstAttribute="leading" secondItem="6Nk-lX-Wrd" secondAttribute="leading" constant="100" id="LZR-9Z-eeA"/>
                             <constraint firstItem="mQx-UY-4lc" firstAttribute="top" secondItem="6te-gG-2vA" secondAttribute="bottom" constant="21" id="cz9-HQ-Kof"/>
                             <constraint firstItem="6te-gG-2vA" firstAttribute="top" secondItem="DaP-ez-mmq" secondAttribute="bottom" constant="8" symbolic="YES" id="hfU-3W-r8M"/>
+                            <constraint firstAttribute="trailing" secondItem="6te-gG-2vA" secondAttribute="trailing" constant="20" id="zq4-6v-Cbw"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Coordinate Systems" id="8iL-qH-5wg"/>
